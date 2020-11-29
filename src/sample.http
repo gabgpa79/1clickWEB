@@ -1,7 +1,7 @@
 
-GET http://192.168.0.10:4000/api/categorias/listar/ec
+DELETE http://192.168.0.16:4000/api/categorias/8
 Content-Type: application/json
 
 {
-    "nombre" : "Alimentossss"
+    "nombre" : "TECNO"
 }

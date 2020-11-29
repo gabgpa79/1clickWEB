@@ -9,27 +9,19 @@ import {
 class FormCliente extends React.Component {
   render() {
     
-    return (
-      <>       
-        <div className="linea">
-        <Row>            
-            <Col md="6">
-              <h5>Perfil</h5>
-            </Col>
-            <Col md="6">
-            <h5>Portada</h5>
-            </Col>  
-        </Row>
-        <Row>            
-            <Col md="6">
-              <Imagen/>
-            </Col>
-            <Col md="6">
-              <Portada/>
-            </Col>  
-        </Row>    
-        </div>
-      </>
+    return (      
+        <div className="ifiles">
+          <Row>
+            <Col>
+            <Portada/>  
+            </Col>          
+          </Row>
+          <Row>
+          <Col>
+            <Imagen/>
+          </Col>
+          </Row>                  
+        </div>      
     );
   }
 }

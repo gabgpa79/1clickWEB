@@ -55,14 +55,17 @@ class FormCliente extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let dato = this.props.clientes.item;
-	dato.paqueteId = this.props.paquetes.item.id;
-	dato.categoriaId = this.props.categorias.item.id;  
-    if (dato.id) { 	    
-      this.props.update("CLIENTE_REGISTO", "clientes", dato);
-    } else {
-      this.props.register("CLIENTE_REGISTO", "clientes", dato);
-    }
+     
+        let dato = this.props.clientes.item;
+	      dato.paqueteId = this.props.paquetes.item.id;
+	      dato.categoriaId = this.props.categorias.item.id;  
+        if (dato.id) { 	    
+          this.props.update("CLIENTE_REGISTO", "clientes", dato);
+        } else {
+          this.props.register("CLIENTE_REGISTO", "clientes", dato);
+        }
+     
+     
   }
 
   handleChange = (prop) => (event) => {
@@ -122,7 +125,8 @@ class FormCliente extends React.Component {
                             id="nombres"
                             placeholder="nombres"
                             value={item.nombres}
-                            onChange={this.handleChanges("nombres")}                            
+                            onChange={this.handleChanges("nombres")}        
+                            required                    
                           />
                         </FormGroup>
                       </Col>
@@ -195,6 +199,7 @@ class FormCliente extends React.Component {
                           placeholder="direccion"
                           value={item.direccion}
                           onChange={this.handleChanges("direccion")}
+                          required
                           />  
                       </Col>
                       <Col className="pr-md-1" md="3">
@@ -259,6 +264,7 @@ class FormCliente extends React.Component {
                             placeholder="email"
                             value={item.email}
                             onChange={this.handleChanges("email")}
+                            required
                           />
                         </FormGroup>
                       </Col>                   
@@ -287,8 +293,7 @@ class FormCliente extends React.Component {
                           id="facebook"
                           placeholder="facebook"
                           value={item.facebook}
-                          onChange={this.handleChanges("facebook")}
-                          required
+                          onChange={this.handleChanges("facebook")}                          
                           />
                         </FormGroup>
                       </Col>
@@ -301,28 +306,16 @@ class FormCliente extends React.Component {
                           id="instagram"
                           placeholder="instagram"
                           value={item.instagram}
-                          onChange={this.handleChanges("instagram")}
-                          required
+                          onChange={this.handleChanges("instagram")}                          
                           />
                         </FormGroup>
                       </Col>                                          
-                    </Row>
-                  
+                    </Row>                  
 
-                    <Row>
-                      <Col className="pr-md-1" md="5">
-                        
-                      </Col>
-                      <Col className="px-md-1" md="7">
-                        <FormGroup>
-                          
-                        </FormGroup>
-                      </Col>                      
-                    </Row>
                     <Row>
                       <Col md="12">
                         <FormGroup>
-                          <label>Descripción</label>
+                          <label>Descripción/Actividad</label>
                           <Input
                           type="textarea"
                           name="descripcion"

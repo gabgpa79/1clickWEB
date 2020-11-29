@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { crudActions } from "../../actions";
-import { Modal, Nav, NavItem, Row, Col } from "reactstrap";
+import { Modal, Nav, NavItem, Row, Col, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import TablePaquetes from "./components/TablePaquetes";
 import PaqueteRegister from "./components/PaqueteRegister";
@@ -18,6 +18,11 @@ class Paquetes extends React.Component {
   state = {
     acc1: "nav-links active",
     acc2: "nav-links ",
+  };
+
+  toggleModal = () => {
+    const state = this.props.paquetes.modalView === true ? false : true;
+    this.props.itemRegister("PAQUETE_ITEM_REGISTER", state, null);
   };
 
   render() {
@@ -45,28 +50,23 @@ class Paquetes extends React.Component {
                   </Link>
                 </NavItem>
               </Nav>
-            </Col>
-            <Col md="3" className="text-right">
-              <h5>DATOS</h5>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Nav tabs className="bg-navins">
-                <li className={acc1}>
-                  <FontAwesomeIcon icon={faList} /> Lista
-                </li>
-                <li
-                  className={acc2}
+            </Col>            
+          </Row>          
+          <Row>            
+            <Col md="3">              
+                <Button 
+                  className={"btn-xs btn-info"}
                   onClick={() => {
                     this.toggleModal();
-                  }}
+                  }}                
                 >
-                  <FontAwesomeIcon icon={faPlus} /> Nuevo
-                </li>
-              </Nav>
-            </Col>
-          </Row>
+                   <i className="fas fa-arrow-left" /> Nuevo Paquete
+                </Button>              
+            </Col>                            
+            <Col md="9">
+              
+            </Col>          
+          </Row> 
 
           <Row>
             <Col>

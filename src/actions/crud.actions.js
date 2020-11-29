@@ -198,7 +198,7 @@ function register(xredux, payload, dato) {
     crudService
       .create(payload, dato)
       .then((response) => {
-        dispatch(Registered(xredux, response.result));
+        dispatch(Registered(xredux, response.result));        
         dispatch(createNotification(alertActions.success(response.message)));
       })
       .catch((err) => {

@@ -62,7 +62,7 @@ class Imagen extends React.Component {
       $imagePreview = (
         <img
           alt="cliente"
-          className="img-responsive"
+          className="img-perfil"
           src={apiErp + "/static/images/clientes/lg/" + item.filename}
         />
       );
@@ -70,51 +70,52 @@ class Imagen extends React.Component {
 
     return (
       <>
-        <Row>
-          <Col>
-            <div className="imgPreview">{$imagePreview}</div>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="mt-2">
-            <form onSubmit={(e) => this._handleSubmit(e)}>
-              {item.id && (
-                <>
-                  <Row>
-                    <Col className="imga text-center">
-                      <FormGroup className="frmi">
-                        <Input
-                          type="file"
-                          id="file"
-                          name="formData"
-                          onChange={(e) => this._handleImageChange(e)}
-                        />
-                        <Label for="file">seleccionar</Label>
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="imga text-center">
-                      <ButtonGroup>
-                        <Button
-                          className={
-                            file
-                              ? "submitButton btn-success"
-                              : "submitButton disabled"
-                          }
-                          type="submit"
-                          onClick={(e) => this._handleSubmit(e)}
-                        >
-                          Upload
-                        </Button>
-                      </ButtonGroup>
-                    </Col>
-                  </Row>
-                </>
-              )}
-            </form>
-          </Col>
-        </Row>
+        <Row className="perfilPreview">
+        <Col>
+        {$imagePreview}
+        </Col>
+      </Row>
+        <Row className="perfilSave">
+        <Col>
+        <form onSubmit={(e) => this._handleSubmit(e)}>
+            {item.id && (
+              <>
+                <Row>
+                  <Col >
+                    <FormGroup className="frmp">
+                      <Input
+                        type="file"
+                        id="file"
+                        name="formData"
+                        onChange={(e) => this._handleImageChange(e)}
+                      />
+                      <Label for="file">seleccionar</Label>
+                    </FormGroup>
+                  </Col>                  
+                </Row>
+                <Row>                  
+                  <Col >
+                  <ButtonGroup>
+                      <Button
+                        className={
+                          file
+                            ? "submitButton btn-success btn-md"
+                            : "submitButton disabled btn-md"
+                        }
+                        type="submit"
+                        onClick={(e) => this._handleSubmit(e)}
+                      >
+                        Upload
+                      </Button>
+                    </ButtonGroup>
+                  </Col>
+                </Row>
+              </>
+            )}
+          </form>
+        </Col>
+      </Row>  
+      
       </>
     );
   }

@@ -1,0 +1,998 @@
+1  ls
+    2  cd SERVICIOS/api/server/src/models/
+    3  clear
+    4  ls
+    5  cd vim red.js 
+    6  cd SERVICIOS/api/server/src/models/
+    7  touch rango.js
+    8  vim rango.js 
+    9  cd ..
+   10  ls
+   11  cd ..
+   12  clear
+   13  ls
+   14  cd controllers/
+   15  ls
+   16  vim RedController.js 
+   17  systemctl stop ninx
+   18  systemctl stop nginx
+   19  systemctl start httpd
+   20  ifconfig
+   21  cd /var/
+   22  clear
+   23  ls
+   24  mv assets/ www/mlm/src/
+   25  cp -r assets/img/* ls www/mlm/src/assets/img/
+   26  s
+   27  clear
+   28  ls
+   29  cd www/
+   30  ls
+   31  cd mlm/
+   32  ls
+   33  cd src/assets/
+   34  ls
+   35  cd img/
+   36  ls
+   37  cd /var/
+   38  clear
+   39  ls
+   40  cd /var/www/mlm/SERVICIOS/
+   41  clear
+   42  ls
+   43  cd api/
+   44  ls
+   45  pwd
+   46  ls -las
+   47  clear
+   48  ls
+   49  clear
+   50  ls
+   51  cd server/
+   52  ls
+   53  cd ..
+   54  clear
+   55  ls
+   56  pwd
+   57  ifconfig
+   58  clear
+   59  ls
+   60  pm2 list
+   61  cd ..
+   62  clear
+   63  ls
+   64  pm2 start ecosystem.config.js 
+   65  pm2 log
+   66  netstat -tunpnl
+   67  kill -9 752505
+   68  pm2 start ecosystem.config.js 
+   69  pm2 log
+   70  clear
+   71  ls
+   72  cat ecosystem.config.js 
+   73  clear
+   74  ls
+   75  pm2 list
+   76  netstat -tunpnl
+   77  netstat -tupnl
+   78  history
+   79  clear
+   80  ls
+   81  cd SERVICIOS/
+   82  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+   83  pm2 list
+   84  pm2 3 stop
+   85  pm2 stop 3
+   86  clear
+   87  ls
+   88  cd ..
+   89  clear
+   90  ls
+   91  vim src/helpers/api.erp.js 
+   92  npm start
+   93  clear
+   94  ls
+   95  firewall-cmd --port list
+   96  firewall-cmd --list post
+   97  firewall-cmd --list-ports
+   98  npm start
+   99  vim src/pages/redes/components/nodo.jsx 
+  100  npm start
+  101  vim src/helpers/api.erp.js 
+  102  npm start
+  103  vim src/helpers/api.erp.js 
+  104  npm start
+  105  clear
+  106  ls
+  107  vim src/reducers/redes.reducers.js 
+  108  npm start
+  109  clear
+  110  ls
+  111  pwd
+  112  cd src/assets/css/
+  113  pwd
+  114  cd /var/
+  115  ls
+  116  cd assets/
+  117  ñs
+  118  ls
+  119  cd css/
+  120  ls
+  121  scp black-dashboard-react.css /var/www/mlm/src/assets/css/
+  122  cp black-dashboard-react.css /var/www/mlm/src/assets/css/
+  123  npm start
+  124  rm /var/www/mlm/src/assets/css/black-dashboard-react.css
+  125  ls /var/www/mlm/src/assets/css/
+  126  cd /var/www/mlm/src/assets/c
+  127  cd /var/www/mlm/src/assets/css/
+  128  ls
+  129  rm black-dashboard-react.css 
+  130  ls
+  131  rm -rf black-dashboard-react.css 
+  132  cd /var/
+  133  clear
+  134  ls
+  135  cd assets/
+  136  ls
+  137  cd css/
+  138  ls
+  139  scp black-dashboard-react.css /var/www/mlm/src/assets/css/
+  140  cp black-dashboard-react.css /var/www/mlm/src/assets/css/
+  141  cd ..
+  142  clear
+  143  ls
+  144  cd mail/
+  145  cd mlm
+  146  cd ..
+  147  clear
+  148  ls
+  149  cd www/mlm/
+  150  ls
+  151  npm start
+  152  ls
+  153  vim src/helpers/api.erp.js 
+  154  npm start
+  155  clear
+  156  ls
+  157  vim SERVICIOS/api/server/controllers/MailController.js 
+  158  pm2 list
+  159  pm2 reload 0
+  160  npm start
+  161  ls
+  162  rm -rf build/
+  163  npm build run
+  164  ls
+  165  npm run build
+  166  clear
+  167  ls
+  168  vim src/helpers/api.erp.js 
+  169  vim src/helpers/store.js 
+  170  pm2 list
+  171  pm2 start ecosystem.config.js 
+  172  cd /var/www/mlm/SERVICIOS/
+  173  clear
+  174  ls
+  175  vim api/index.js 
+  176  pm2 list
+  177  pm reload 0
+  178  pm2 reload 0
+  179  pm2 list
+  180  pm2 stop
+  181  pm2 stop 0
+  182  netstat -tunpnl
+  183  npm start
+  184  vim api/index.js 
+  185  npm start
+  186  netstat -tunpnl
+  187  clear
+  188  ls
+  189  pm2 start 0
+  190  pm2 list
+  191  pm2 stop 3
+  192  pm2 list
+  193  cd ..
+  194  clear
+  195  ls
+  196  vim src/helpers/api.erp.js 
+  197  npm run build
+  198  pm2 start ecosystem.config.js 
+  199  pm2 list
+  200  clear
+  201  ls
+  202  cd /var/www/
+  203  clear
+  204  ls
+  205  vim sowing-hope.com/index.html 
+  206  systemctl stop nginx
+  207  systemctl start httpd
+  208  systemctl stop httpd
+  209  systemctl start nginx
+  210  cd /var/
+  211  clear
+  212  ls
+  213  cd www/
+  214  clear
+  215  ls
+  216  rm -rf sowing-hope.com/
+  217  exit
+  218  clear
+  219  ls
+  220  cd /etc/nginx/sites-available/sowing-hope.com 
+  221  vim /etc/nginx/sites-available/sowing-hope.com 
+  222  systemctl restart nginx
+  223  ls
+  224  vim /etc/nginx/sites-available/sowing-hope.com 
+  225  systemctl restart nginx
+  226  vim /etc/nginx/sites-available/sowing-hope.com 
+  227  ifconfig
+  228  vim /etc/nginx/sites-available/sowing-hope.com 
+  229  systemctl restart nginx
+  230  vim /etc/nginx/sites-available/sowing-hope.com 
+  231  systemctl restart nginx
+  232  vim /etc/nginx/sites-available/sowing-hope.com 
+  233  systemctl restart nginx
+  234  cd /var/www/mlm/
+  235  clear
+  236  ls
+  237  vim ecosystem.config.js 
+  238  vim /etc/nginx/sites-available/sowing-hope.com 
+  239  systemctl restart nginx
+  240  vim /etc/nginx/sites-available/sowing-hope.com 
+  241  systemctl restart nginx
+  242  vim /etc/nginx/sites-available/sowing-hope.com 
+  243  systemctl restart nginx
+  244  vim /etc/nginx/sites-available/sowing-hope.com 
+  245  systemctl restart nginx
+  246  ls
+  247  cd ..
+  248  ls
+  249  cp -r mlm/build/ sowing-hope.com/
+  250  cd sowing-hope.com/
+  251  ls
+  252  cd build/
+  253  ñs
+  254  ls
+  255  cd ..
+  256  clear
+  257  ls
+  258  rm -rf build/
+  259  vim /etc/nginx/sites-available/sowing-hope.com 
+  260  yum -y links
+  261  yum install -y links
+  262  dnf search links
+  263  dnf search elinks
+  264  dnf search lynks
+  265  dnf search lynx
+  266  yum search lynx
+  267  ifconfig
+  268  clear
+  269  ls
+  270  cd /etc/nginx/sites-enabled/sowing-hope.com 
+  271  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  272  systemctl restart nginx
+  273  ifconfig
+  274  clear
+  275  ls
+  276  vim index.html 
+  277  systemctl restart nginx
+  278  ls
+  279  cd ,,
+  280  clear
+  281  ls
+  282  cd ..
+  283  clear
+  284  ls
+  285  cd mlm/
+  286  ls
+  287  vim src/helpers/history.js 
+  288  vim src/index.js 
+  289  pm2 list
+  290  pm2 stop 3
+  291  clear
+  292  ls
+  293  rm -rf build/
+  294  ls
+  295  vim src/index.js 
+  296  vim package.json 
+  297  npm run build
+  298  clear
+  299  ls
+  300  history
+  301  pm2 start ecosystem.config.js
+  302  pm2 list
+  303  pm2 stop 3
+  304  clear
+  305  ls
+  306  cp -r build/static/ /var/www/sowing-hope.com/
+  307  pm2 start ecosystem.config.js
+  308  pm2 stop 3
+  309  ls
+  310  vim src/index.js 
+  311  npm run build
+  312  cd ..
+  313  rm -rf sowing-hope.com/static/
+  314  vim mlm/src/index.js 
+  315  cd ..
+  316  cd www/
+  317  vim mlm/src/index.js 
+  318  clear
+  319  ls
+  320  vim mlm/src/helpers/history.js 
+  321  vim mlm/src/index.js 
+  322  npm run build
+  323  cd mlm/
+  324  npm run build
+  325  npm start
+  326  vim mlm/src/index.js 
+  327  vim src/index.js 
+  328  npm run build
+  329  pm2 list
+  330  pm2 start ecosystem.config.js
+  331  pm2 list
+  332  ifconfig
+  333  pm2 stop 3
+  334  clear
+  335  ls
+  336  cd ..
+  337  scp -r mlm/build/static/ /var/www/sowing-hope.com/
+  338  pm2 list
+  339  rm -rf sowing-hope.com/static/
+  340  pm2 list
+  341  cd mlm/
+  342  ls
+  343  pm2 start ecosystem.config.js
+  344  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  345  systemctl restart nginx
+  346  journalctl -xe
+  347  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  348  systemctl restart nginx
+  349  clear
+  350  ls
+  351  vim src/index.js 
+  352  vim src/helpers/history.js 
+  353  vim src/index.js 
+  354  vim src/helpers/history.js 
+  355  pm2 list
+  356  pm2 stop 3
+  357  rm -r build/
+  358  rm -rf build/
+  359  npm run dbuild
+  360  npm run build
+  361  pm2 start ecosystem.config.js
+  362  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  363  systemctl restart nginx
+  364  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  365  systemctl restart nginx
+  366  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  367  systemctl restart nginx
+  368  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  369  systemctl restart nginx
+  370  clear
+  371  ls
+  372  vim /etc/nginx/sites-available/app
+  373  cat /etc/nginx/sites-available/sowing-hope.com 
+  374  vim /etc/nginx/sites-available/app
+  375  cd /var/www/
+  376  ls
+  377  mkdir app
+  378  cd app/
+  379  vim index.html
+  380  vim /etc/nginx/sites-available/app
+  381  sudo ln s /etc/nginx/sites-available/app /etc/nginx/sites-enabled//app
+  382  clear
+  383  ls
+  384  sudo ln s /etc/nginx/sites-available/app /etc/nginx/sites-enabled//app
+  385  sudo ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled//app
+  386  sudo systemctl restart nginx
+  387  vim /etc/nginx/sites-available/app
+  388  sudo systemctl restart nginx
+  389  vim /etc/nginx/sites-available/app
+  390  sudo systemctl restart nginx
+  391  vim /etc/nginx/sites-available/app
+  392  rm /etc/nginx/sites-enabled/app 
+  393  rm -rf /etc/nginx/sites-enabled/app 
+  394  rm -rf /etc/nginx/sites-available/app 
+  395  rm /etc/nginx/sites-enabled/sowing-hope.com 
+  396  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  397  sudo systemctl restart nginx
+  398  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  399  sudo systemctl restart nginx
+  400  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  401  sudo systemctl restart nginx
+  402  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  403  sudo systemctl restart nginx
+  404  pm2 list
+  405  pm2 reload
+  406  pm2 reload 3
+  407  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  408  sudo systemctl restart nginx
+  409  clear
+  410  ls
+  411  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  412  sudo systemctl restart nginx
+  413  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  414  sudo systemctl restart nginx
+  415  pm2 list
+  416  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  417  sudo systemctl restart nginx
+  418  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  419  sudo systemctl restart nginx
+  420  pm2 list
+  421  cd /var/www/mlm/
+  422  clear
+  423  ls
+  424  vim package.json 
+  425  npm run build
+  426  clear
+  427  ls
+  428  pm2 list
+  429  pm2 reload
+  430  pm2 reload 3
+  431  pm2 list
+  432  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  433  systemctl restart nginx
+  434  pm2 list
+  435  pm2 stop 3
+  436  pm2 start 3
+  437  pm2 list
+  438  clear
+  439  ls
+  440  vim package.json 
+  441  rm -rf build/
+  442  npm run build
+  443  pm2 list
+  444  pm2 stop 3
+  445  clear
+  446  ls
+  447  pm2 list
+  448  pm2 start 3
+  449  vim package.json 
+  450  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  451  systemctl restart nginx
+  452  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  453  pm2 list
+  454  pm2 stop 3
+  455  clear
+  456  ls
+  457  serve -s build
+  458  vim package.json 
+  459  npm run build
+  460  serve -s build
+  461  clear
+  462  pm2 list
+  463  pm2 0
+  464  pm2 stop 0
+  465  cd SERVICIOS/
+  466  clear
+  467  ls
+  468  vim api/index.js 
+  469  npm run dev
+  470  netstat -tunpl
+  471  kill -9 1103043
+  472  npm run dev
+  473  clear
+  474  ls
+  475  history
+  476  clear
+  477  ls
+  478  pm2 start --interpreter node_modules/.bin/babel-node api/index.j
+  479  pm2 start --interpreter node_modules/.bin/babel-node api/index.j
+  480  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  481  cd ..
+  482  ls
+  483  vim src/helpers/api.erp.js 
+  484  pm2 list
+  485  clear
+  486  history
+  487  pm2 start ecosystem.config.js
+  488  pm2 stop 3
+  489  rm -rf build/
+  490  clear
+  491  ls
+  492  npm run build
+  493  pm2 start ecosystem.config.js
+  494  clear
+  495  ls
+  496  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  497  systemctl restart nginx
+  498  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  499  systemctl restart nginx
+  500  ls
+  501  vim /var/www/sowing-hope.com/index.html 
+  502  ls
+  503  cd src/
+  504  cd pages/
+  505  clear
+  506  ls
+  507  cd login/
+  508  ls
+  509  touch Termino.jsx
+  510  vim Termino.jsx 
+  511  vim registro.jsx 
+  512  ls
+  513  pm2 list
+  514  ls
+  515  pm2 stop 3
+  516  pm2 list
+  517  cd ..
+  518  cñear
+  519  clear
+  520  ls
+  521  rm -rf build/
+  522  npm run build
+  523  vim src/pages/login/registro.jsx 
+  524  npm run build
+  525  clear
+  526  ls
+  527  history
+  528  pm2 start ecosystem.config.js
+  529  pm2 stop 3
+  530  vim src/helpers/api.erp.js 
+  531  clear
+  532  ls
+  533  npm run build
+  534  pm2 start ecosystem.config.js
+  535  pm2 stop 3
+  536  clear
+  537  ls
+  538  vim src/assets/css/black-dashboard-react.css 
+  539  npm run build
+  540  pm2 start ecosystem.config.js
+  541  pm2 stop 0
+  542  cd Se
+  543  cd SERVICIOS/
+  544  clear
+  545  ls
+  546  vim api/server/controllers/MailController.js 
+  547  pm2 list
+  548  history
+  549  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  550  clear
+  551  ls
+  552  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  553  systemctl restart nginx
+  554  systemctl stop nginx
+  555  systemctl stop httpd
+  556  ifconfig
+  557  systemctl start httpd
+  558  ls
+  559  systemctl stop httpd
+  560  clear
+  561  ls
+  562  systemctl start nginx
+  563  pm2 list
+  564  pm2 stop 0
+  565  clear
+  566  ls
+  567  cd /var/www/mlm/
+  568  ls
+  569  cd SERVICIOS/
+  570  ls
+  571  vim api/index.js 
+  572  history
+  573  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  574  pm2 list
+  575  pm2 stop 0
+  576  clear
+  577  ls
+  578  rm cert.pem key.pem 
+  579  ls
+  580  rm -rf cert.pem 
+  581  rm -rf key.pem 
+  582  clear
+  583  ls
+  584  cd /etc/ssl/certs/
+  585  ls
+  586  cat /etc/nginx/sites-enabled/sowing-hope.com 
+  587  clear
+  588  ls
+  589  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  590  systemctl restart nginx
+  591  cd /var/www/mlm/SERVICIOS/
+  592  clear
+  593  ls
+  594  vim api/index.js 
+  595  ifconfig
+  596  vim api/index.js 
+  597  ls
+  598  npm start
+  599  systemctl restart nginx
+  600  npm start
+  601  netstat -tunpnl
+  602  kill -9 2011577
+  603  npm start
+  604  cat /etc/nginx/sites-enabled/sowing-hope.com 
+  605  q!
+  606  clear
+  607  ls
+  608  vim /etc/nginx/sites-enabled/sowing-hope.com 
+  609  systemctl restart nginx
+  610  cat /var/log/nginx/access.log
+  611  tail -f /var/log/message
+  612  tail -f /var/log/nginx/error.log
+  613  clear
+  614  pm2 list
+  615  npm start
+  616  history
+  617  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  618  cd ..
+  619  clear
+  620  ls
+  621  pm2 list
+  622  pm2 stop 3
+  623  ls
+  624  rm -rf build/
+  625  clear
+  626  ls
+  627  vim src/helpers/api.erp.js 
+  628  npm run build
+  629  clear
+  630  ls
+  631  pm2 list
+  632  history
+  633  clear
+  634  ls
+  635  pm2 start ecosystem.config.js
+  636  pm2 list
+  637  ls
+  638  cd SERVICIOS/
+  639  ls
+  640  cat api/server/routes/UsuarioRoutes.js 
+  641  clear
+  642  ls
+  643  vim api/server/routes/UsuarioRoutes.js 
+  644  ls
+  645  cat api/index.js 
+  646  pm2 list
+  647  pm2 stop 0
+  648  clear
+  649  npm start
+  650  ls
+  651  cat api/server/routes/UsuarioRoutes.js 
+  652  cat api/server/routes/index.js 
+  653  npm start
+  654  clear
+  655  cd ..
+  656  ls
+  657  vim src/helpers/api.erp.js 
+  658  pm2 list
+  659  clear
+  660  ls
+  661  rm -rf build/
+  662  ls
+  663  pm2 list
+  664  pm2 stop 3
+  665  netstat -tunpnl
+  666  vim src/helpers/api.erp.js 
+  667  clear
+  668  ls
+  669  npm run build
+  670  clear
+  671  history
+  672  pm2 list
+  673  pm2 start ecosystem.config.js
+  674  clear
+  675  pm2 list
+  676  cd SERVICIOS/
+  677  ls
+  678  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  679  clear
+  680  ls
+  681  cd /var/
+  682  clear
+  683  ls
+  684  cat www/mlm/src/helpers/api.erp.js 
+  685  pm2 list
+  686  pm2 stop 3
+  687  cd /var/
+  688  clear
+  689  ls
+  690  cd www/
+  691  ls
+  692  cd mlm/
+  693  ls
+  694  npm start
+  695  clea
+  696  rls
+  697  cd ..
+  698  clear
+  699  ls
+  700  cd ..
+  701  ls
+  702  cp MLM/src/assets/css/black-dashboard-react.css www/mlm/src/assets/css/
+  703  cp MLM/src/actions/usu.actions.js www/mlm/src/actions/
+  704  cp MLM/src/pages/login/login www/mlm/src/pages/login/
+  705  cp MLM/src/pages/login/login.jsx www/mlm/src/pages/login/
+  706  cp MLM/src/pages/login/registro.jsx www/mlm/src/pages/login/
+  707  cp MLM/src/pages/login/logine.jsx www/mlm/src/pages/login/
+  708  cp MLM/src/pages/usuarios/components/TableUsers.jsx www/mlm/src/pages/usuarios/components/
+  709  cp MLM/src/services/user.service.js  www/mlm/src/services/
+  710  clear
+  711  ls
+  712  cp MLM/api/server/routes/index.js  www/mlm/SERVICIOS/api/server/routes/
+  713  cp MLM/api/server/routes/UsuarioRoutes.js  www/mlm/SERVICIOS/api/server/routes/
+  714  cp MLM/api/server/js  www/mlm/SERVICIOS/api/server/controllers/
+  715  pm2 list
+  716  pm2 stop 0
+  717  history
+  718  cd www/mlm/
+  719  clear
+  720  ls
+  721  history
+  722  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  723  cd SERVICIOS/
+  724  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  725  clear
+  726  ls
+  727  cd ..
+  728  ls
+  729  pm2 list
+  730  rm -rf build/
+  731  ls
+  732  npm run build
+  733  history
+  734  pm2 start ecosystem.config.js
+  735  pm2 stop 3
+  736  clear
+  737  ls
+  738  rm -rf build/
+  739  ls
+  740  vim src/pages/usuarios/components/TableUsers.jsx 
+  741  npm run build
+  742  pm2 start ecosystem.config.js
+  743  celar
+  744  ls
+  745  clear
+  746  ls
+  747  vim SERVICIOS/api/server/controllers/UsuarioController.js 
+  748  vim SERVICIOS/api/server/controllers/ContratoController.js 
+  749  vim SERVICIOS/api/server/controllers/ProcesoController.js 
+  750  pm2 list
+  751  pm2 stop 0
+  752  cd SERVICIOS/
+  753  history
+  754  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  755  clear
+  756  ls
+  757  pm2 stop 0
+  758  cd /var/
+  759  scp MLM/src/pages/login/verificar.jsx www/mlm/src/pages/login/
+  760  cp MLM/src/pages/login/verificar.jsx www/mlm/src/pages/login/
+  761  cd www/mlm/src/pages/login/
+  762  ls
+  763  cd ..
+  764  clear
+  765  ls
+  766  cd ..
+  767  clear
+  768  ls
+  769  pwd
+  770  cd SERVICIOS/
+  771  history
+  772  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  773  pm2 list
+  774  cd /var/
+  775  ls
+  776  rm -rf MLM/
+  777  ls
+  778  cd /var/
+  779  ls
+  780  rm -rf MLM/*
+  781  pm2 list
+  782  pm2 stop 3
+  783  cp MLM/src/pages/login/login.jsx /var/www/mlm/src/pages/login/
+  784  clear
+  785  vim /var/www/mlm/src/pages/login/
+  786  vim /var/www/mlm/src/pages/login/login
+  787  vim /var/www/mlm/src/pages/login/login.jsx 
+  788  ls
+  789  cd www/mlm/
+  790  clear
+  791  ls
+  792  npm i --save @fortawesome/fontawesome-svg-core
+  793  npm install --save @fortawesome/free-solid-svg-icons
+  794  npm install --save @fortawesome/react-fontawesome
+  795  npm install -g npm
+  796  npm install --save @fortawesome/react-fontawesome
+  797  clear
+  798  ls
+  799  pwd
+  800  cd ..
+  801  clear
+  802  ls
+  803  cp MLM/src/pages/login/login.jsx /var/www/mlm/src/pages/login/
+  804  cp MLM/src/pages/login/logine.jsx /var/www/mlm/src/pages/login/
+  805  cp MLM/src/pages/login/registro.jsx /var/www/mlm/src/pages/login/
+  806  cp MLM/src/pages/login/restore.jsx /var/www/mlm/src/pages/login/
+  807  cp MLM/src/pages/login/verificar.jsx /var/www/mlm/src/pages/login/
+  808  cp MLM/src/pages/nota/components/NotaForm.jsx /var/www/mlm/src/pages/nota/components/
+  809  cp MLM/src/assets/img/money.png /var/www/mlm/src/assets/img/
+  810  cd www/mlm/
+  811  clear
+  812  ls
+  813  rfm -rf build/
+  814  rm -rf build/
+  815  npm run build
+  816  history
+  817  pm2 start ecosystem.config.js
+  818  pm2 stop 3
+  819  clear
+  820  ls
+  821  cd ..
+  822  cp /var/MLM/src/assets/css/black-dashboard-react.css /var/www/mlm/src/assets/css/
+  823  cd www/mlm/
+  824  clear
+  825  ls
+  826  rm -rf build/
+  827  npm run build
+  828  clear
+  829  ls
+  830  pm2 start ecosystem.config.js
+  831  clear
+  832  ls
+  833  cd /var/www/
+  834  ls
+  835  cp -r mlm/ /home/
+  836  clear
+  837  ls
+  838  exit
+  839  vim /etc/nginx/sites-available/sowing-hope.com 
+  840  exit
+  841  clear
+  842  ls
+  843  history
+  844  clear
+  845  ls
+  846  systemctl nginx stop
+  847  systemctl stop nginx
+  848  systemctl start httpd
+  849  ifconfig
+  850  clear
+  851  ls -las
+  852  clear
+  853  ls
+  854  systemctl stop httpd
+  855  systemctl start nginx
+  856  systemctl stop httpd
+  857  systemctl stop nginx
+  858  systemctl start httpd
+  859  systemctl stop nginx
+  860  systemctl stop httpd
+  861  systemctl start nginx
+  862  clear
+  863  ls
+  864  clear
+  865  ls
+  866  vim /var/www/sowing-hope.com/index.html 
+  867  clear
+  868  ls
+  869  cd /var/www/
+  870  ls
+  871  cd mlm/
+  872  ls
+  873  vim src/pages/login/registro.jsx 
+  874  vim src/pages/login/verificar.jsx 
+  875  pm2 list
+  876  pm2 stop 3
+  877  clear
+  878  ls
+  879  npm run build
+  880  history
+  881  pm2 start ecosystem.config.js 
+  882  pm2 list
+  883  pm2 stop 0
+  884  clear
+  885  ls
+  886  vim SERVICIOS/api/server/controllers/ContratoController.js 
+  887  vim SERVICIOS/api/server/controllers/UsuarioController.js 
+  888  vim SERVICIOS/api/server/controllers/NotaController.js 
+  889  vim SERVICIOS/api/server/controllers/ComisionController.js 
+  890  vim SERVICIOS/api/server/controllers/DonacionController.js 
+  891  clear
+  892  ls
+  893  vim SERVICIOS/api/server/controllers/UsuarioController.js 
+  894  vim SERVICIOS/api/server/controllers/ContratoController.js 
+  895  history
+  896  clear
+  897  ls
+  898  cd SERVICIOS/
+  899  clear
+  900  ls
+  901  history
+  902  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  903  clear
+  904  pm2
+  905  pm2 list
+  906  pm2 monitor
+  907  pm2 monit
+  908  clear
+  909  pm2 list
+  910  netstat -tunpl
+  911  kill -9 2995135
+  912  pm2 list
+  913  pm2 stop 0
+  914  pm2 list
+  915  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  916  clear
+  917  ls
+  918  pm2 monit
+  919  pm2 list
+  920  clear
+  921  pm2 list
+  922  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  923  pm2 monit
+  924  clear
+  925  ls
+  926  cd /var/www/
+  927  ls
+  928  cd mlm/
+  929  ls
+  930  vim src/pages/usuarios/components/TableUsers.jsx 
+  931  pm2 list
+  932  pm2 stop 3
+  933  clear
+  934  ls
+  935  npm run build
+  936  npm start ecosystem.config.js 
+  937  clear
+  938  ls
+  939  history
+  940  pm2 start ecosystem.config.js
+  941  systemctl stop nginx
+  942  systemctl start httpd
+  943  ifconfig
+  944  clear
+  945  ls
+  946  vim src/pages/usuarios/components/TableUsers.jsx 
+  947  pm2 list
+  948  pm2 stop 3
+  949  npm run build
+  950  clear
+  951  ls
+  952  npm run build
+  953  history
+  954  pm2 start ecosystem.config.js
+  955  systemctl stop httpd
+  956  systemctl start nginx
+  957  systemctl stop nginx
+  958  systemctl start httpd
+  959  systemctl stop httpd
+  960  systemctl start nginx
+  961  clear
+  962  ls
+  963  systemctl stop nginx
+  964  systemctl start httpd
+  965  ls
+  966  clear
+  967  ls
+  968  pm2 list
+  969  pm2 stop 0
+  970  cd /var/www/mlm/
+  971  clear
+  972  ls
+  973  cd SERVICIOS/
+  974  ls
+  975  vim api/server/controllers/DonacionController.js 
+  976  vim api/server/controllers/ContratoController.js 
+  977  vim api/server/controllers/BilleteraController.js 
+  978  vim api/server/controllers/NotaController.js
+  979  vim api/server/controllers/ContratoController.js 
+  980  pm2 list
+  981  history
+  982  pm2 start --interpreter node_modules/.bin/babel-node api/index.js
+  983  systemctl stop httpd
+  984  systemctl start nginx
+  985  clear
+  986  history
+  987  clear
+  988  ls
+  989  cd /opt/letsencrypt/
+  990  ls
+  991  sudo -H ./letsencrypt-auto certonly --standalone --renew-by-default -d sowing-hope.com -d www.sowing-hope.com
+  992  systemctl stop nginx
+  993  sudo -H ./letsencrypt-auto certonly --standalone --renew-by-default -d sowing-hope.com -d www.sowing-hope.com
+  994  systemctl start nginx
+  995  clear
+  996  ls
+  997  exit
+  998  history

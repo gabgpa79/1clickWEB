@@ -12223,15 +12223,6 @@ select.form-control option {
   padding: 5px;
 }
 
-.frmi{
-  border: solid 1px #4d4d4d;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.04);
-  max-width: 150px;
-  margin: 0 auto;
-
-}
 
 .avatari{
   height: 70px;
@@ -12249,18 +12240,7 @@ select.form-control option {
   border-radius: 0%;
 }
 
-.imgPreview{
-  height: 400px;
-  padding: 10px;
-  width: 300;
-  border: solid 2px #fff;
-  text-align: center;
-}
 
-.imgPreview .img-responsive{
-  height: 300px;
-  width: 300;
-}
 
 .table-basic{
   background: rgb(255,255,255,0.2);
@@ -12513,4 +12493,96 @@ select.form-control option {
 
 .table-simple tr:hover td {
    background-color:#eaeaea !important;
+}
+
+
+.ifiles{
+  border: solid 1px #eaeaea;
+  height: 500px;
+}
+
+
+
+.imgPreview .img-portada{
+  height: 200px;
+  width: 100%;
+  
+}
+
+.imgSave{
+  height: auto;
+  width: 50%;
+  padding: 3px;    
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 11;  
+  background-color: rgba(0,0,0,0.7);
+  position: relative;
+  border-radius: 10px;
+}
+.imgPreview{
+  height: auto;
+  width: 90%;
+  padding: 3px;    
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: -45px;
+  position: relative;
+  z-index: 10;
+}
+
+
+.frmi{
+  border: solid 1px #4d4d4d;
+  padding: 5px;
+  border-radius: 5px;
+  background: #fbbc04;
+  max-width: 150px;
+  margin: 0 auto;
+  text-align: center;
+}
+.btn-md{
+  height: 30px;
+  width: 100%;
+  font-size: 0.72rem;
+}
+
+.perfilSave{
+  height: auto;
+  width: 165px;
+  padding: 3px;    
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 11;  
+  background-color: rgba(0,0,0,0.7);
+  position: relative;
+  border-radius: 10px;
+  
+}
+.perfilPreview{
+  height: auto;  
+  width: 200px;
+  padding: 3px;    
+  margin-left: 10px;  
+  margin-top: -45px;
+  position: relative;
+  z-index: 10;
+}
+
+.perfilPreview .img-perfil{
+  height: 150px;
+  width: 150px;
+  border: solid 1px #c1c1c1;
+  border-radius: 50%;
+  
+}
+
+.frmp{
+  border: solid 1px #4d4d4d;
+  padding: 5px;
+  border-radius: 5px;
+  background: #2eaadb;
+  max-width: 150px;
+  margin: 0 auto;
+  text-align: center;
 }

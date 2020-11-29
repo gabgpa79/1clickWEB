@@ -43,20 +43,17 @@ class TablePaquetes extends React.Component {
     const { data, pagina, paginas, total } = this.props.paquetes;
     const { nroPagina } = this.state;
     return (
-      <>
-        <Row>
-          <Col className="rpx">
-            <Table className="table-basica">
+      <div className="simple">      
+      <Row>
+        <Col>      
+          <Table className="table-simple">
               <thead>
                 <tr>
                   <th className="text-center" width="5%">
                     #
                   </th>
-                  <th width="40%">Nombre</th>
-                  <th width="20%" className="text-center">
-                    Tiempo (días)
-                  </th>
-                  <th width="25%" className="text-center">
+                  <th width="60%">Nombre</th>                  
+                  <th width="30%" className="text-center">
                     Valor
                   </th>
                   <th width="10%" className="text-center">
@@ -69,8 +66,7 @@ class TablePaquetes extends React.Component {
                   {data.map((item) => (
                     <tr key={item.id}>
                       <td className="text-center">{item.id}</td>
-                      <td>{item.nombre}</td>
-                      <td className="text-center">{item.tiempo}</td>
+                      <td>{item.nombre}</td>                      
                       <td className="text-center">
                         {new Intl.NumberFormat("de-DE", {
                           style: "currency",
@@ -106,7 +102,7 @@ class TablePaquetes extends React.Component {
             />
           </Col>
         </Row>
-      </>
+      </div>
     );
   }
 }

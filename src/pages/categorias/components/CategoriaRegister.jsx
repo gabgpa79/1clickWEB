@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { crudActions } from "../../../actions";
-import SelectPaises from "./SelectCiudades";
-
 import { Form, Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
 
-class EditorialRegister extends Component {
+class CategoriaRegister extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -15,49 +13,37 @@ class EditorialRegister extends Component {
 
   reset = () => {
     const item = null;
-    const state = this.props.editoriales.modalView === true ? false : true;
-    this.props.itemRegister("EDITORIAL_ITEM_REGISTER", state, item);
+    const state = this.props.paquetes.modalView === true ? false : true;
+    this.props.itemRegister("CATEGORIA_ITEM_REGISTER", state, item);
   };
 
   handleChanges = (prop) => (event) => {
     if (event) {
-      this.props.change("EDITORIAL_CHANGE", prop, event.target.value);
+      this.props.change("CATEGORIA_CHANGE", prop, event.target.value);
     } else {
-      this.props.change("EDITORIAL_CHANGE", prop, "");
+      this.props.change("CATEGORIA_CHANGE", prop, "");
     }
   };
 
   handleSubmit(event) {
     event.preventDefault();
-    let dato = this.props.editoriales.item;
+    let dato = this.props.categorias.item;
     if (dato.id) {
-      this.props.update("EDITORIAL_REGISTRO", "editoriales", dato);
+      this.props.update("CATEGORIA_REGISTRO", "categorias", dato);
     } else {
-      this.props.register("EDITORIAL_REGISTRO", "editoriales", dato);
+      this.props.register("CATEGORIA_REGISTRO", "categorias", dato);
     }
   }
 
   render() {
-    const { item } = this.props.editoriales;
+    const { item } = this.props.categorias;
     return (
       <Row className="crl">
         <Col>
+          <h5 className="ml-2 mb-2 text-dark">
+            <b>Formulario de Registro</b>
+          </h5>
           <Form className="form-registro" onSubmit={this.handleSubmit}>
-            <FormGroup row>
-              <Label for="code" sm={3}>
-                Código :
-              </Label>
-              <Col sm={9}>
-                <Input
-                  type="text"
-                  name="codigo"
-                  id="codigo"
-                  placeholder="código"
-                  value={item.codigo}
-                  onChange={this.handleChanges("codigo")}
-                />
-              </Col>
-            </FormGroup>
             <FormGroup row>
               <Label for="nombre" sm={3}>
                 Nombre :
@@ -72,15 +58,7 @@ class EditorialRegister extends Component {
                   onChange={this.handleChanges("nombre")}
                 />
               </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Label for="nombre" sm={3}>
-                Paises :
-              </Label>
-              <Col sm={9}>
-                <SelectPaises />
-              </Col>
-            </FormGroup>
+            </FormGroup>            
             <Button
               className={item.nombre ? "btn-sm btn-success" : "btn-sm disabled"}
               type="submit"
@@ -112,7 +90,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-  editoriales: state.editoriales,
+  categorias: state.categorias,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditorialRegister);
+export default connect(mapStateToProps, mapDispatchToProps)(CategoriaRegister);

@@ -62,59 +62,57 @@ class Portada extends React.Component {
       $imagePreview = (
         <img
           alt="cliente"
-          className="img-responsive"
+          className="img-portada"
           src={apiErp + "/static/images/clientes/portada/lg/" + item.portada}
         />
       );
     }
 
     return (
-      <>
-        <Row>
-          <Col>
-            <div className="imgPreview">{$imagePreview}</div>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="mt-2">
-            <form onSubmit={(e) => this._handleSubmit(e)}>
-              {item.id && (
-                <>
-                  <Row>
-                    <Col className="imga text-center">
-                      <FormGroup className="frmi">
-                        <Input
-                          type="file"
-                          id="file"
-                          name="formData"
-                          onChange={(e) => this._handleImageChange(e)}
-                        />
-                        <Label for="file">seleccionar</Label>
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="imga text-center">
-                      <ButtonGroup>
-                        <Button
-                          className={
-                            file
-                              ? "submitButton btn-success"
-                              : "submitButton disabled"
-                          }
-                          type="submit"
-                          onClick={(e) => this._handleSubmit(e)}
-                        >
-                          Upload
-                        </Button>
-                      </ButtonGroup>
-                    </Col>
-                  </Row>
-                </>
-              )}
-            </form>
-          </Col>
-        </Row>
+      <>      
+      <Row className="imgSave">
+        <Col>
+        <form onSubmit={(e) => this._handleSubmit(e)}>
+            {item.id && (
+              <>
+                <Row>
+                  <Col md="6">
+                    <FormGroup className="frmi">
+                      <Input
+                        type="file"
+                        id="file"
+                        name="formData"
+                        onChange={(e) => this._handleImageChange(e)}
+                      />
+                      <Label for="file">seleccionar</Label>
+                    </FormGroup>
+                  </Col>
+                  <Col md="6">
+                  <ButtonGroup>
+                      <Button
+                        className={
+                          file
+                            ? "submitButton btn-success btn-md"
+                            : "submitButton disabled btn-md"
+                        }
+                        type="submit"
+                        onClick={(e) => this._handleSubmit(e)}
+                      >
+                        Upload
+                      </Button>
+                    </ButtonGroup>
+                  </Col>
+                </Row>
+              </>
+            )}
+          </form>
+        </Col>
+      </Row>  
+      <Row className="imgPreview">
+        <Col>
+        {$imagePreview}
+        </Col>
+      </Row>
       </>
     );
   }
