@@ -13,7 +13,7 @@ class CategoriaRegister extends Component {
 
   reset = () => {
     const item = null;
-    const state = this.props.paquetes.modalView === true ? false : true;
+    const state = this.props.categorias.modalView === true ? false : true;
     this.props.itemRegister("CATEGORIA_ITEM_REGISTER", state, item);
   };
 

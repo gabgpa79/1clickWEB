@@ -1,34 +1,40 @@
 import React from "react";
 import Banner from "./Banner";
 import Slider from "./Slider";
-import {Row,Col } from "reactstrap";
+import Video from "./Video";
+import { connect } from "react-redux";
 
 class FormPropaganda extends React.Component {
   render() {
-    
+    const { item } = this.props.clientes;         
+    let dd = null
+    switch(item.paqueteId){
+      case '1':
+      dd = null
+      break
+      case '2':
+      dd = <Banner/>
+      break
+      case '3':
+      dd = <Slider/>
+      break  
+      case '4':
+      dd = <Video/>
+      break  
+      default:
+      break
+    }    
     return (
-      <>       
-        <div className="linea">
-        <Row>            
-            <Col md="6">
-              <h5>Banner</h5>
-            </Col>
-            <Col md="6">
-            <h5>Slider</h5>
-            </Col>  
-        </Row>
-        <Row>            
-            <Col md="6">
-              <Banner/>
-            </Col>
-            <Col md="6">
-              <Slider/>
-            </Col>  
-        </Row>    
-        </div>
-      </>
+      <div className="ifiles">
+        { dd }
+     </div>
     );
   }
 }
 
-export default FormPropaganda;
+const mapStateToProps = (state) => ({
+  clientes: state.clientes,
+  users: state.users,
+});
+
+export default connect(mapStateToProps)(FormPropaganda);

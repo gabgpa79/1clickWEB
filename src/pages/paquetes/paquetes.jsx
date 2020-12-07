@@ -7,17 +7,14 @@ import { Link } from "react-router-dom";
 import TablePaquetes from "./components/TablePaquetes";
 import PaqueteRegister from "./components/PaqueteRegister";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faList,
-  faPlus,
+import {  
   faChevronDown,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 class Paquetes extends React.Component {
   state = {
-    acc1: "nav-links active",
-    acc2: "nav-links ",
+    
   };
 
   toggleModal = () => {
@@ -26,8 +23,7 @@ class Paquetes extends React.Component {
   };
 
   render() {
-    const { modalView } = this.props.paquetes;
-    const { acc1, acc2 } = this.state;
+    const { modalView } = this.props.paquetes;    
     return (
       <div className="content">
         <div className="main-contenido">

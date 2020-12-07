@@ -39,7 +39,7 @@ class clientes extends React.Component {
     this.props.getItemViews("CLIENTE_ITEM_VIEWS", est);
   };
   render() {
-    const { data, pagina, paginas, total, modalView } = this.props.clientes;
+    const { pagina, paginas, total, modalView } = this.props.clientes;
     const { nroPagina } = this.state;
     return (
       <>
@@ -69,7 +69,8 @@ class clientes extends React.Component {
             <Col md="12" className="table-basic">              
             <TableClientes />    
             </Col>          
-          </Row>  
+          </Row>
+            
           <Row>
           <Col>
           <Pagination

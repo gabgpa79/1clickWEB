@@ -10,42 +10,100 @@ class Slider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      file: "",
-      imagePreviewUrl: "",
+      file1: "",
+      file2: "",
+      file3: "",
+      imagePreviewUrl1: "",
+      imagePreviewUrl2: "",
+      imagePreviewUrl3: "",
+
     };
   }
 
   componentDidMount() {
     this.setState({
-      file: "",
-      imagePreviewUrl: "",
+      file1: "",
+      file2: "",
+      file3: "",
+      imagePreviewUrl1: "",
+      imagePreviewUrl2: "",
+      imagePreviewUrl3: "",
     });
   }
 
-  _handleSubmit(e) {
+  _handleSubmit1(e) {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("file", this.state.file);
+    formData.append("file", this.state.file1);
     this.props.slider(
       "CLIENTE_REGISTO",
       "files",
       formData,
-      this.props.clientes.item.id
-    );
-    /* this.setState({
-        file: '',
-        imagePreviewUrl: ''
-      });*/
+      this.props.clientes.item.id,
+      1
+    );    
   }
 
-  _handleImageChange(e) {
+  _handleSubmit2(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", this.state.file2);
+    this.props.slider(
+      "CLIENTE_REGISTO",
+      "files",
+      formData,
+      this.props.clientes.item.id,
+      2
+
+    );    
+  }
+  _handleSubmit3(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", this.state.file3);
+    this.props.slider(
+      "CLIENTE_REGISTO",
+      "files",
+      formData,
+      this.props.clientes.item.id,
+      3
+    );    
+  }
+
+  _handleImageChange1(e) {
     e.preventDefault();
     let reader = new FileReader();
     let file = e.target.files[0];
     reader.onloadend = () => {
       this.setState({
-        file: file,
-        imagePreviewUrl: reader.result,
+        file1: file,
+        imagePreviewUrl1: reader.result,
+      });
+    };
+    reader.readAsDataURL(file);
+  }
+
+  _handleImageChange2(e) {
+    e.preventDefault();
+    let reader = new FileReader();
+    let file = e.target.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        file2: file,
+        imagePreviewUrl2: reader.result,
+      });
+    };
+    reader.readAsDataURL(file);
+  }
+
+  _handleImageChange3(e) {
+    e.preventDefault();
+    let reader = new FileReader();
+    let file = e.target.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        file3: file,
+        imagePreviewUrl3: reader.result,
       });
     };
     reader.readAsDataURL(file);
@@ -53,69 +111,180 @@ class Slider extends React.Component {
 
   render() {
     const { item } = this.props.clientes;
-    const { imagePreviewUrl, file } = this.state;
+    const { imagePreviewUrl1,imagePreviewUrl2,imagePreviewUrl3, file1, file2, file3 } = this.state;
     
-    let $imagePreview = null;
-    if (imagePreviewUrl) {
-      $imagePreview = <img alt="preview" className="img-responsive" src={imagePreviewUrl} />;
+    let $imagePreview1 = null;
+    let $imagePreview2 = null;
+    let $imagePreview3 = null;
+    
+    if (imagePreviewUrl1) {
+      $imagePreview1 = <img alt="preview" className="img-responsive" src={imagePreviewUrl1} />;
     } else {
-      $imagePreview = (
+      $imagePreview1 = (
         <img
           alt="cliente"
           className="img-responsive"
-          src={apiErp + "/static/images/slider/lg/" + item.slider}
+          src={apiErp + "/static/images/slider/lg/" + item.slider1}
+        />
+      );
+    }
+    if (imagePreviewUrl2) {
+      $imagePreview2 = <img alt="preview" className="img-responsive" src={imagePreviewUrl2} />;
+    } else {
+      $imagePreview2 = (
+        <img
+          alt="cliente"
+          className="img-responsive"
+          src={apiErp + "/static/images/slider/lg/" + item.slider2}
+        />
+      );
+    }
+    if (imagePreviewUrl3) {
+      $imagePreview3 = <img alt="preview" className="img-responsive" src={imagePreviewUrl3} />;
+    } else {
+      $imagePreview3 = (
+        <img
+          alt="cliente"
+          className="img-responsive"
+          src={apiErp + "/static/images/slider/lg/" + item.slider3}
         />
       );
     }
 
     return (
-      <>
-        <Row>
-          <Col>
-            <div className="imgPreview">{$imagePreview}</div>
+      <div className="containers">
+        <Row className="slider">
+          <Col md="10">
+          <div className="sliderPreview">{$imagePreview1}</div>
           </Col>
-        </Row>
-        <Row>
-          <Col className="mt-2">
-            <form onSubmit={(e) => this._handleSubmit(e)}>
-              {item.id && (
-                <>
-                  <Row>
-                    <Col className="imga text-center">
-                      <FormGroup className="frmi">
-                        <Input
-                          type="file"
-                          id="file"
-                          name="formData"
-                          onChange={(e) => this._handleImageChange(e)}
-                        />
-                        <Label for="file">seleccionar</Label>
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="imga text-center">
-                      <ButtonGroup>
-                        <Button
-                          className={
-                            file
-                              ? "submitButton btn-success"
-                              : "submitButton disabled"
-                          }
-                          type="submit"
-                          onClick={(e) => this._handleSubmit(e)}
-                        >
-                          Upload
-                        </Button>
-                      </ButtonGroup>
-                    </Col>
-                  </Row>
-                </>
-              )}
-            </form>
+          <Col md="2">
+          <form onSubmit={(e) => this._handleSubmit1(e)}>
+            {item.id && (
+              <>
+                <Row>
+                  <Col className="imga text-center">
+                    <FormGroup className="frmis">
+                      <Input
+                        type="file"
+                        id="file1"
+                        name="formData"
+                        onChange={(e) => this._handleImageChange1(e)}
+                      />
+                      <Label for="file">seleccionar</Label>
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col className="imgas text-center">
+                    <ButtonGroup>
+                      <Button
+                        className={
+                          file1
+                            ? "submitButton btn-success"
+                            : "submitButton disabled"
+                        }
+                        type="submit"
+                        onClick={(e) => this._handleSubmit1(e)}
+                      >
+                        Upload
+                      </Button>
+                    </ButtonGroup>
+                  </Col>
+                </Row>
+              </>
+            )}
+          </form>
+          </Col>  
+        </Row>  
+
+        <Row className="slider">
+          <Col md="10">
+          <div className="sliderPreview">{$imagePreview2}</div>
           </Col>
-        </Row>
-      </>
+          <Col md="2">
+          <form onSubmit={(e) => this._handleSubmit2(e)}>
+            {item.id && (
+              <>
+                <Row>
+                  <Col className="imga text-center">
+                    <FormGroup className="frmis">
+                      <Input
+                        type="file"
+                        id="file1"
+                        name="formData"
+                        onChange={(e) => this._handleImageChange2(e)}
+                      />
+                      <Label for="file">seleccionar</Label>
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col className="imgas text-center">
+                    <ButtonGroup>
+                      <Button
+                        className={
+                          file2
+                            ? "submitButton btn-success"
+                            : "submitButton disabled"
+                        }
+                        type="submit"
+                        onClick={(e) => this._handleSubmit2(e)}
+                      >
+                        Upload
+                      </Button>
+                    </ButtonGroup>
+                  </Col>
+                </Row>
+              </>
+            )}
+          </form>
+          </Col>  
+        </Row>  
+
+        <Row className="slider">
+          <Col md="10">
+          <div className="sliderPreview">{$imagePreview3}</div>
+          </Col>
+          <Col md="2">
+          <form onSubmit={(e) => this._handleSubmit3(e)}>
+            {item.id && (
+              <>
+                <Row>
+                  <Col className="imga text-center">
+                    <FormGroup className="frmis">
+                      <Input
+                        type="file"
+                        id="file1"
+                        name="formData"
+                        onChange={(e) => this._handleImageChange3(e)}
+                      />
+                      <Label for="file">seleccionar</Label>
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col className="imgas text-center">
+                    <ButtonGroup>
+                      <Button
+                        className={
+                          file3
+                            ? "submitButton btn-success"
+                            : "submitButton disabled"
+                        }
+                        type="submit"
+                        onClick={(e) => this._handleSubmit3(e)}
+                      >
+                        Upload
+                      </Button>
+                    </ButtonGroup>
+                  </Col>
+                </Row>
+              </>
+            )}
+          </form>
+          </Col>  
+        </Row>  
+      </div>   
     );
   }
 }

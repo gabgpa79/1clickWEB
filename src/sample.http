@@ -1,7 +1,0 @@
-
-DELETE http://192.168.0.16:4000/api/categorias/8
-Content-Type: application/json
-
-{
-    "nombre" : "TECNO"
-}

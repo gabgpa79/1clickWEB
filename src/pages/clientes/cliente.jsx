@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 class libros extends React.Component {
   state = {
       activeTab:'2',
+      clienteId: 0
   };
 
   componentDidMount() {
@@ -21,14 +22,21 @@ class libros extends React.Component {
     } = this.props;
     if (params.clienteId > 0) {
       this.props.getItem("CLIENTE_ITEM", "clientes", params.clienteId);
+      this.setState({
+        clienteId: params.clienteId
+      })
     }
   }
   
-  toggle = tab => {
-    const { activeTab } = this.state
-    this.setState({
-      activeTab : tab
-    })
+  toggle = tab =>{
+    const {activeTab, clienteId } = this.state
+    if(activeTab !== tab) {
+      this.setState({
+        activeTab : tab
+      },this.props.getItem("CLIENTE_ITEM", "clientes", clienteId)
+      )
+    }
+
   }
   
 
@@ -40,8 +48,7 @@ class libros extends React.Component {
         <Nav tabs>
         <NavItem>
           <NavLink
-            className={classnames({ active: activeTab === '1' })}
-            onClick={() => { this.toggle('1'); }}>
+            className={classnames({ active: activeTab === '1' })}       >
             <Link to={`/admin/clientes`}>
             Lista de Clientes
             </Link>
@@ -79,6 +86,7 @@ class libros extends React.Component {
             Publicidad
           </NavLink>
         </NavItem>
+       
       </Nav>
       <TabContent activeTab={activeTab}>
         <TabPane tabId="1">          
@@ -96,6 +104,7 @@ class libros extends React.Component {
         <TabPane tabId="5">
           <FormPropaganda/>
         </TabPane>
+      
       </TabContent>
         </div>
       </div>

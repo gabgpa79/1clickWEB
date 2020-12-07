@@ -31,6 +31,7 @@ const initialState = {
     servicios:false,
     longitude: -17.877973,
     latitude: -63.173716,
+    video:'',
     Categorium: {
       id: 0,
       nombre: "",

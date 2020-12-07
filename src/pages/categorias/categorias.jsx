@@ -9,27 +9,24 @@ import TableCategorias from './components/TableCategorias'
 import CategoriaRegister from './components/CategoriaRegister'
 
 
-import {
-  faList,
-  faPlus,
+import {  
   faChevronDown,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 class Categorias extends React.Component {
   state = {
-    acc1: "nav-links active",
-    acc2: "nav-links ",
+    
   };
 
   toggleModal = () => {
-    const state = this.props.paquetes.modalView === true ? false : true;
-    this.props.itemRegister("PAQUETE_ITEM_REGISTER", state, null);
+    const state = this.props.categorias.modalView === true ? false : true;
+    this.props.itemRegister("CATEGORIA_ITEM_REGISTER", state, null);
   };
 
   render() {
     const { modalView } = this.props.categorias;
-    const { acc1, acc2 } = this.state;  
+    
 return(
   <div className="content">
   <div className="main-contenido">

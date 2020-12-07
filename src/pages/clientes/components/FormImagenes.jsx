@@ -1,6 +1,5 @@
 import React from "react";
 import Imagen from "./Imagen";
-import Portada from "./Portada";
 import {
   Row,
   Col  
@@ -10,12 +9,7 @@ class FormCliente extends React.Component {
   render() {
     
     return (      
-        <div className="ifiles">
-          <Row>
-            <Col>
-            <Portada/>  
-            </Col>          
-          </Row>
+        <div className="ifiles">          
           <Row>
           <Col>
             <Imagen/>

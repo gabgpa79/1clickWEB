@@ -64,9 +64,7 @@ class TableClientes extends React.Component {
 
   render() {
     const { data } = this.props.clientes;    
-    return (
-      <div className="simple">
-      
+    return (      
       <Table className="table-simple">
                   <thead>
                 <tr>
@@ -157,7 +155,7 @@ class TableClientes extends React.Component {
                 </tbody>
               )}
                   </Table>   
-                 </div>          
+                       
     );
   }
 }

@@ -33,10 +33,7 @@ class SelectPaquetes extends React.Component {
   }
 
   render() {
-    const { items, item } = this.props.paquetes;
-    const {
-      
-    } = this.state;
+    const { items, item } = this.props.paquetes;    
 
     return (
       <Select                                                               

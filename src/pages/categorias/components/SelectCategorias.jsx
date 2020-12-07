@@ -13,11 +13,7 @@ class SelectCategorias extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isClearable: true,
-      isDisabled: false,
-      isLoading: false,
-      isRtl: false,
-      isSearchable: true,
+      
     };
   }
 
@@ -39,14 +35,6 @@ class SelectCategorias extends React.Component {
 
   render() {
     const { items, item } = this.props.categorias;        
-    const {
-      isClearable,
-      isSearchable,
-      isDisabled,
-      isLoading,
-      isRtl,
-    } = this.state;
-
     return (
       <Select                                                               
       name="categoria"                                    

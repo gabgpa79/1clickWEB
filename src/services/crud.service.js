@@ -111,14 +111,14 @@ function banner(payload, dato, datoId) {
   ).then(handleResponse);
 }
 
-function slider(payload, dato, datoId) {
+function slider(payload, dato, datoId,slider) {
   const requestOptions = {
     method: "PUT",
     headers: { ...authHeader() },
     body: dato,
   };
   return fetch(
-    `${apiErp}/${payload}/slider/item/${datoId}`,
+    `${apiErp}/${payload}/slider/item/${datoId}/slider/${slider}`,
     requestOptions
   ).then(handleResponse);
 }

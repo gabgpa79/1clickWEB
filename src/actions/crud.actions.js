@@ -291,11 +291,11 @@ function banner(xredux, payload, data, datoId) {
   };
 }
 
-function slider(xredux, payload, data, datoId) {
+function slider(xredux, payload, data, datoId,slider) {
   return (dispatch) => {
     dispatch(inicial());
     crudService
-      .slider(payload, data, datoId)
+      .slider(payload, data, datoId,slider)
       .then((response) => {
         dispatch(Up(xredux, response.result));
         dispatch(
@@ -451,8 +451,8 @@ function _delete(xredux, payload, dato) {
         dispatch(Registereds(xredux, response.result));
         dispatch(createNotification(alertActions.success(response.message)));
       })
-      .catch((err) => {
-        dispatch(createNotification(alertActions.error(err)));
+      .catch((err) => {        
+        dispatch(createNotification(alertActions.error(err.original.detail)));
       });
   };
 }

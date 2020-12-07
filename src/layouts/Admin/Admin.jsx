@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { userActions } from "../../actions";
 import { Route, Switch } from "react-router-dom";
-import PerfectScrollbar from "perfect-scrollbar";
+
 
 import AdminNavbar from "../../components/Navbars/AdminNavbar.jsx";
 import Sidebar from "../../components/Sidebar/Sidebar.jsx";
@@ -23,7 +23,7 @@ import { Spinner } from "react-redux-spinner";
 
 import logo from "../../assets/img/logo.png";
 
-var ps;
+
 
 class Admin extends React.Component {
   constructor(props) {
@@ -39,10 +39,10 @@ class Admin extends React.Component {
     if (navigator.platform.indexOf("Win") > -1) {
       document.documentElement.className += " perfect-scrollbar-on";
       document.documentElement.classList.remove("perfect-scrollbar-off");
-      ps = new PerfectScrollbar(this.refs.mainPanel, { suppressScrollX: true });
+     /* ps = new PerfectScrollbar(this.refs.mainPanel, { suppressScrollX: true });*/
       let tables = document.querySelectorAll(".table-responsive");
       for (let i = 0; i < tables.length; i++) {
-        ps = new PerfectScrollbar(tables[i]);
+      /*  ps = new PerfectScrollbar(tables[i]);*/
       }
     }
     this.cahrgeModule();
@@ -59,7 +59,7 @@ class Admin extends React.Component {
       if (navigator.platform.indexOf("Win") > -1) {
         let tables = document.querySelectorAll(".table-responsive");
         for (let i = 0; i < tables.length; i++) {
-          ps = new PerfectScrollbar(tables[i]);
+          /*ps = new PerfectScrollbar(tables[i]);*/
         }
       }
       document.documentElement.scrollTop = 0;

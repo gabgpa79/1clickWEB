@@ -40,21 +40,9 @@ class ComponentToPrint extends Component {
       
 
        <Row>            
-            <Col md="5">
+            <Col md="4">
               <Card className="card-user">
-                <CardBody>
-                  <CardText />
-                  <div className="portada">
-                  <a href="#pablo" onClick={e => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="avatarp"                        
-                        src={
-                          apiErp + "/static/images/clientes/portada/md/" + item.portada
-                        }
-                      />                      
-                    </a>                                          
-                  </div>
+                <CardBody>                                    
                   <div className="author">                                      
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
@@ -63,8 +51,7 @@ class ComponentToPrint extends Component {
                         src={
                           apiErp + "/static/images/clientes/md/" + item.filename
                         }
-                      />
-                      <h5 className="title">{item.nombres}</h5>
+                      />                      
                     </a>                    
                   </div>
                   <div className="card-description">                    
@@ -161,7 +148,7 @@ class ComponentToPrint extends Component {
                 </CardFooter>  
               </Card>
             </Col>
-            <Col md="7">
+            <Col md="8">
             
             <Table className="table-dark" responsive>
             <thead>

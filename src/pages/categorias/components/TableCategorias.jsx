@@ -6,7 +6,7 @@ import Pagination from "../../../components/Navbars/Pagination";
 
 import { Row, Col, Table, Button, ButtonGroup } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faEdit,faTrash } from "@fortawesome/free-solid-svg-icons";
 class TableCategorias extends React.Component {
   state = {
     nroPagina: 12,
@@ -39,6 +39,10 @@ class TableCategorias extends React.Component {
     this.props.itemRegister("CATEGORIA_ITEM_REGISTER", state, item);
   };
 
+  handleDelete (itemId){           
+    this.props.delete("CATEGORIA_DATA", "categorias", itemId);
+   }
+
   render() {
     const { data, pagina, paginas, total } = this.props.categorias;
     const { nroPagina } = this.state;
@@ -52,8 +56,8 @@ class TableCategorias extends React.Component {
                   <th className="text-center" width="5%">
                     #
                   </th>
-                  <th width="90%">Nombre</th>                                    
-                  <th width="10%" className="text-center">
+                  <th width="70%">Nombre</th>                                    
+                  <th width="30%" className="text-center">
                     Acciones
                   </th>
                 </tr>
@@ -71,8 +75,17 @@ class TableCategorias extends React.Component {
                             onClick={() => this.toggleModal(item)}
                           >
                             <FontAwesomeIcon icon={faEdit} />
-                          </Button>
-                        </ButtonGroup>
+                          </Button>                                             
+                          <Button 
+                            className="btn-sm btn-danger" 
+                            onClick={()=>{this.handleDelete(item.id)}}
+                            >
+                             <FontAwesomeIcon
+                            icon={faTrash}
+                            className="text-center text-delete"
+                          />
+                          </Button>  
+                        </ButtonGroup>                        
                       </td>
                     </tr>
                   ))}

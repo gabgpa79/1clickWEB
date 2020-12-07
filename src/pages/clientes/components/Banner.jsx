@@ -61,7 +61,7 @@ class Banner extends React.Component {
     } else {
       $imagePreview = (
         <img
-          alt="cliente"
+          alt="banner"
           className="img-responsive"
           src={apiErp + "/static/images/banner/lg/" + item.banner}
         />
@@ -69,50 +69,51 @@ class Banner extends React.Component {
     }
 
     return (
+      <>        
+      
+        <Row className="bannerPreview">
+          <Col>
+              {$imagePreview}
+          </Col>
+        </Row>
+        <Row className="bannerSave">          
+          <Col>
+          <form onSubmit={(e) => this._handleSubmit(e)}>
+    {item.id && (
       <>
         <Row>
-          <Col>
-            <div className="imgPreview">{$imagePreview}</div>
+          <Col className="imga text-center">
+            <FormGroup className="frmi">
+              <Input
+                type="file"
+                id="file"
+                name="formData"
+                onChange={(e) => this._handleImageChange(e)}
+              />
+              <Label for="file">seleccionar</Label>
+            </FormGroup>
           </Col>
         </Row>
         <Row>
-          <Col className="mt-2">
-            <form onSubmit={(e) => this._handleSubmit(e)}>
-              {item.id && (
-                <>
-                  <Row>
-                    <Col className="imga text-center">
-                      <FormGroup className="frmi">
-                        <Input
-                          type="file"
-                          id="file"
-                          name="formData"
-                          onChange={(e) => this._handleImageChange(e)}
-                        />
-                        <Label for="file">seleccionar</Label>
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="imga text-center">
-                      <ButtonGroup>
-                        <Button
-                          className={
-                            file
-                              ? "submitButton btn-success"
-                              : "submitButton disabled"
-                          }
-                          type="submit"
-                          onClick={(e) => this._handleSubmit(e)}
-                        >
-                          Upload
-                        </Button>
-                      </ButtonGroup>
-                    </Col>
-                  </Row>
-                </>
-              )}
-            </form>
+          <Col className="imga text-center">
+            <ButtonGroup>
+              <Button
+                className={
+                  file
+                    ? "submitButton btn-success"
+                    : "submitButton disabled"
+                }
+                type="submit"
+                onClick={(e) => this._handleSubmit(e)}
+              >
+                Upload
+              </Button>
+            </ButtonGroup>
+          </Col>
+        </Row>
+      </>
+    )}
+  </form>
           </Col>
         </Row>
       </>
