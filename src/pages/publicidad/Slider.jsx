@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { crudActions } from "../../../actions";
-import { apiErp } from "../../../helpers";
+import { crudActions } from "../../actions";
+import { apiErp } from "../../helpers";
 
 import { Input, Row, Col, Label, FormGroup, Button, ButtonGroup } from "reactstrap";
 
@@ -122,7 +122,7 @@ class Slider extends React.Component {
     } else {
       $imagePreview1 = (
         <img
-          alt="cliente"
+          alt="imagen"
           className="img-responsive"
           src={apiErp + "/static/images/slider/lg/" + item.slider1}
         />
@@ -133,7 +133,7 @@ class Slider extends React.Component {
     } else {
       $imagePreview2 = (
         <img
-          alt="cliente"
+          alt="imagen"
           className="img-responsive"
           src={apiErp + "/static/images/slider/lg/" + item.slider2}
         />
@@ -144,7 +144,7 @@ class Slider extends React.Component {
     } else {
       $imagePreview3 = (
         <img
-          alt="cliente"
+          alt="imagen"
           className="img-responsive"
           src={apiErp + "/static/images/slider/lg/" + item.slider3}
         />

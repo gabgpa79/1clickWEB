@@ -1,119 +1,107 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck,faTimes} from "@fortawesome/free-solid-svg-icons";
+
 import ReactToPrint from "react-to-print";
 import { apiErp } from "../../../helpers";
 import Moment from "react-moment";
-import { Table, Row, Card, Col, Button, CardBody, CardFooter, CardText } from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  
-  faCheck,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
-class ComponentToPrint extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+import { Table, Row, Card, Col, Button, CardBody, CardFooter } from "reactstrap";
 
-  render() {
-    const { item, plan } = this.props.data;
-    const { user } = this.props.date;
-    const fechaHoy = new Date();
-    return (
-      <>
-      <Row>
+function ComponentToPrint ({ item, usuario, citem, pdata }) {     
+    const fechaHoy = new Date();    
+    return(
+    <>
+    <Row>
         <Col md="4">
-          <p className="text-left">
-            Fecha Impresión :{" "}
-            <Moment format="DD/MM/YYYY">{fechaHoy}</Moment>
-          </p>
-        </Col>
-        <Col md="4">
-          <p className="text-center">
-            Hora : <Moment format="HH:mm:ss">{fechaHoy}</Moment>
-          </p>
-        </Col>
-        <Col md="4">
-          <p className="text-right">Usuario : {user.nombres}</p>
-        </Col>
-      </Row>
-      
-
-       <Row>            
+            <p className="text-left">
+                Fecha Impresión :{" "}
+                <Moment format="DD/MM/YYYY">{fechaHoy}</Moment>
+            </p>
+            </Col>
             <Col md="4">
-              <Card className="card-user">
+            <p className="text-center">
+                Hora : <Moment format="HH:mm:ss">{fechaHoy}</Moment>
+            </p>
+            </Col>
+            <Col md="4">
+            <p className="text-right">Usuario : { usuario.nombres } </p>
+        </Col>
+    </Row>
+
+    <Row>            
+            <Col md="4">
+              <Card className="card-cliente">
                 <CardBody>                                    
                   <div className="author">                                      
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
                         alt="..."
-                        className="avatar mt-5"                        
+                        className="avatari"                        
                         src={
                           apiErp + "/static/images/clientes/md/" + item.filename
                         }
                       />                      
                     </a>                    
                   </div>
-                  <div className="card-description">                    
-                    {item.descripcion}
+                  <div className="card-description text-white">                    
+                    {item.nombres}
                   </div>
                 </CardBody>
-                
                 <CardFooter>
                 <Row>
-                      <Col className="pr-md-1" md="4">                        
+                      <Col className="pr-md-1 txtcl" md="4">                        
                           Código:
                       </Col>
-                      <Col className="px-md-1" md="8">                        
+                      <Col className="px-md-1 txtcl" md="8">                        
                           {item.id}
                       </Col>                      
                     </Row>
                     <Row>
-                      <Col className="pr-md-1" md="4">                        
+                      <Col className="pr-md-1 txtcl" md="4">                        
                           Nombre:
                       </Col>
-                      <Col className="px-md-1" md="8">                        
+                      <Col className="px-md-1 txtcl" md="8">                        
                           {item.nombres}
                       </Col>                      
                     </Row>
                     <Row>
-                      <Col className="pr-md-1" md="4">                        
+                      <Col className="pr-md-1 txtcl" md="4">                        
                           Dirección:
                       </Col>
-                      <Col className="px-md-1" md="8">                        
+                      <Col className="px-md-1 txtcl" md="8">                        
                           {item.direccion}
                       </Col>                      
                     </Row>               
                     <Row>
-                      <Col className="pr-md-1" md="4">                        
+                      <Col className="pr-md-1 txtcl" md="4">                        
                           Teléfono:
                       </Col>
-                      <Col className="px-md-1" md="8">                        
+                      <Col className="px-md-1 txtcl" md="8">                        
                           {item.telefono}
                       </Col>                      
                     </Row>
                     <Row>
-                      <Col className="pr-md-1" md="4">                        
+                      <Col className="pr-md-1 txtcl" md="4">                        
                           Celular:
                       </Col>
-                      <Col className="px-md-1" md="8">                        
+                      <Col className="px-md-1 txtcl" md="8">                        
                           {item.celular}
                       </Col>                      
                     </Row>             
                     <Row>
-                      <Col className="pr-md-1" md="4">                        
+                      <Col className="pr-md-1 txtcl" md="4">                        
                           Email:
                       </Col>
-                      <Col className="px-md-1" md="8">                        
+                      <Col className="px-md-1 txtcl" md="8">                        
                           {item.email}
                       </Col>                      
                     </Row> 
 
                     <Row>
-                      <Col className="pr-md-1" md="4">                        
+                      <Col className="pr-md-1 txtcl" md="4">                        
                           Reg.:
                       </Col>
-                      <Col className="px-md-1" md="8">                        
+                      <Col className="px-md-1 txtcl" md="8">                        
                       {item.registrado ? (
                         <FontAwesomeIcon
                           icon={faCheck}
@@ -128,10 +116,10 @@ class ComponentToPrint extends Component {
                       </Col>                      
                     </Row>
                     <Row>
-                      <Col className="pr-md-1" md="4">                        
+                      <Col className="pr-md-1 txtcl" md="4">                        
                           Habilitado:
                       </Col>
-                      <Col className="px-md-1" md="8">                        
+                      <Col className="px-md-1 txtcl" md="8">                        
                       {item.habilitado ? (
                         <FontAwesomeIcon
                           icon={faCheck}
@@ -144,13 +132,56 @@ class ComponentToPrint extends Component {
                       />
                       )}
                       </Col>                      
-                    </Row>      
-                </CardFooter>  
+                    </Row>    
+                      
+                </CardFooter> 
+              </Card>
+              <Card className="card-cliente">                
+                <CardFooter>
+                <Row>
+                      <Col className="pr-md-1 txtcl" md="4">                        
+                          Fecha registro:
+                      </Col>
+                      <Col className="px-md-1 txtcl" md="8">                        
+                          {citem.fContrato}
+                      </Col>                      
+                    </Row>
+                    <Row>
+                      <Col className="pr-md-1 txtcl" md="4">                        
+                          Fecha vencimiento:
+                      </Col>
+                      <Col className="px-md-1 txtcl" md="8">                        
+                          {citem.fVencimiento}
+                      </Col>                      
+                    </Row>
+                    <Row>
+                      <Col className="pr-md-1 txtcl" md="4">                        
+                          Motivo:
+                      </Col>
+                      <Col className="px-md-1 txtcl" md="8">                        
+                          {citem.motivo}
+                      </Col>                      
+                    </Row>
+
+                    <Row>
+                      <Col className="pr-md-1 txtcl" md="4">                        
+                          Total:
+                      </Col>
+                      <Col className="px-md-1 txtcl" md="8">                        
+                          {citem.total}
+                      </Col>                      
+                    </Row>
+                                
+
+
+                      
+                </CardFooter> 
               </Card>
             </Col>
             <Col md="8">
             
-            <Table className="table-dark" responsive>
+    <div className="tablec">
+    <Table className="table-simple">
             <thead>
           <tr>
             <th width="20%">N° Cuota</th>
@@ -159,9 +190,9 @@ class ComponentToPrint extends Component {
             <th width="20%">Estado</th>
           </tr>
         </thead>
-        {plan && (
+        {pdata && (
           <tbody>
-            {plan.map((item) => (
+            {pdata.map((item) => (
               <tr key={item.id}>
                 <td className="text-center">{item.cuota}</td>
                 <td>
@@ -180,39 +211,32 @@ class ComponentToPrint extends Component {
             ))}
           </tbody>
         )}           
-            </Table>  
-            </Col>
-          </Row>
-      </>
-    );
-  }
+      </Table>  
+    </div>
+    </Col>
+</Row> 
+
+
+    </>
+     )
 }
 
-class LibroView extends React.Component {
-  render() {
-    return (
-      <div className="creporte">
+function ClienteView ({ item, usuario, citem, pdata }) {     
+return(
+    <div className="creporte">
         <ReactToPrint
-          trigger={() => (
-            <Button className="fas fa-print btn-sm btn-info">
-              Imprimir
-            </Button>
-          )}
-          content={() => this.componentRef}          
+            trigger={() => ( <Button className="fas fa-print btn-sm btn-info">Imprimir</Button>)}
+            content={() => this.componentRef}          
         />
         <ComponentToPrint
-          ref={(el) => (this.componentRef = el)}
-          data={this.props.clientes}
-          date={this.props.users}
+            ref={(el) => (this.componentRef = el)}
+            item={item}            
+            usuario={usuario}
+            citem={citem}
+            pdata={pdata}
         />
-      </div>
-    );
-  }
+    </div>
+     )
 }
 
-const mapStateToProps = (state) => ({
-  clientes: state.clientes,
-  users: state.users,
-});
-
-export default connect(mapStateToProps)(LibroView);
+export default ClienteView

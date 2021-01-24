@@ -1,12 +1,12 @@
 import React from "react";
+import { connect } from "react-redux";
 import Banner from "./Banner";
 import Slider from "./Slider";
 import Video from "./Video";
-import { connect } from "react-redux";
 
-class FormPropaganda extends React.Component {
+class publicidad extends React.Component {  
   render() {
-    const { item } = this.props.clientes;         
+    const { item } = this.props.clientes;
     let dd = null
     switch(item.paqueteId){
       case '1':
@@ -23,18 +23,17 @@ class FormPropaganda extends React.Component {
       break  
       default:
       break
-    }    
+    }
     return (
       <div className="ifiles">
         { dd }
-     </div>
+      </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  clientes: state.clientes,
-  users: state.users,
+  clientes: state.clientes
 });
 
-export default connect(mapStateToProps)(FormPropaganda);
+export default connect(mapStateToProps)(publicidad);

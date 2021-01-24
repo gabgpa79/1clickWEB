@@ -38,10 +38,10 @@ export function categorias(state = initialState, action) {
         ...state,
         modalView: false,
         item: initialState.item,
-        data: action.response.data,
-        pagina: action.response.pagina,
-        paginas: action.response.paginas,
-        total: action.response.total,
+        data: action.item.data,
+        pagina: action.item.pagina,
+        paginas: action.item.paginas,
+        total: action.item.total,
       };
 
     case "CATEGORIA_ITEM_REGISTER":

@@ -55,6 +55,15 @@ class login extends React.Component {
   render() {
     const { username, password, submitted } = this.state;
     return (
+      <div className="pos"
+      style={{
+            backgroundImage:             
+            "url(" + require("../../assets/img/back.jpg") + ")",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',                                        
+          }}
+      >
       <div className="content">        
         <div className="central">
           <Row>
@@ -62,20 +71,16 @@ class login extends React.Component {
               <Card className="card-user">
                 <CardBody>
                   <CardText />
-                  <div className="author">
-                    <div className="block block-one" />
-                    <div className="block block-two" />
-                    <div className="block block-three" />
-                    <div className="block block-four" />
+                  <div className="author">                    
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
                         alt="..."
                         className="avatari"
-                        src={require("../../assets/img/log.png")}
+                        src={require("../../assets/img/logo.png")}
                       />
-                      <h5 className="title mt-5">1Click-bo.com</h5>
+                      <h5 className="title mt-2 text-white">1Click-bo.com</h5>
                     </a>
-                    <p className="description">Inicia Sessión</p>
+                    <p className="description text-white mt-2">Inicia Sessión</p>
                   </div>
                   <div className="card-description">
                   <Form className="login mt-5" onSubmit={this.handleSubmit}>
@@ -83,7 +88,7 @@ class login extends React.Component {
       row
       className={submitted && !username ? " has-error" : ""}
     >
-      <Col sm={2} className="ern">
+      <Col sm={2} className="text-white">
         <FontAwesomeIcon icon={faUser} />
       </Col>
       <Col sm={10}>
@@ -98,7 +103,7 @@ class login extends React.Component {
       </Col>
     </FormGroup>
     <FormGroup row>
-      <Col sm={2} className="ern">
+      <Col sm={2} className="text-white">
         <FontAwesomeIcon icon={faKey} />
       </Col>
       <Col sm={10}>
@@ -114,7 +119,7 @@ class login extends React.Component {
     </FormGroup>
       <div className="button-container">
         <ButtonGroup>
-          <Button className="btn-info mt-3">
+          <Button className="btn-info mt-5 btn-md">
             <FontAwesomeIcon icon={faLock} />
             {' '} Ingresar
           </Button>
@@ -133,6 +138,7 @@ class login extends React.Component {
           </Row>
         </div>
         </div>
+        </div>   
     );
   }
 }

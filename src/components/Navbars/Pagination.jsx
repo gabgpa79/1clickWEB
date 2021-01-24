@@ -32,13 +32,13 @@ function Pagination({
         (number >= current - 2 && number <= current + 2)
       ) {
         return (
-          <button
+          <Button
             key={number}
             className={classes}
-            onClick={() => makeHttpRequestWithPage(number, pagina)}
+            onClick={() => makeHttpRequestWithPage(number, pagina,"nombres","ASC")}
           >
             {number}
-          </button>
+          </Button>
         );
       } else {
         return null;
@@ -46,11 +46,11 @@ function Pagination({
     });
   }
   return (
-    <Nav className="navbar navbar-expand bnavbar">
+    <Nav className="navbari navbar-expand bnavbar">
       <li className="nav-link">
         <Button
-          className="nav-link btn-link aa"
-          onClick={() => makeHttpRequestWithPage(1, pagina)}
+          className="btn-linki"
+          onClick={() => makeHttpRequestWithPage(1, pagina,"nombres","ASC")}
         >
           <FontAwesomeIcon icon={faAngleDoubleLeft} />
         </Button>
@@ -58,9 +58,9 @@ function Pagination({
 
       <li className="nav-link">
         <Button
-          className="nav-link btn-link aa"
+          className="btn-linki"
           onClick={() =>
-            makeHttpRequestWithPage(current === 1 ? 1 : current - 1, pagina)
+            makeHttpRequestWithPage(current === 1 ? 1 : current - 1, pagina,"nombres","ASC")
           }
         >
           <FontAwesomeIcon icon={faAngleLeft} />
@@ -70,11 +70,11 @@ function Pagination({
 
       <li className="nav-link">
         <Button
-          className="nav-link btn-link aa"
+          className="btn-linki"
           onClick={() =>
             makeHttpRequestWithPage(
               current === paginas ? current : current + 1,
-              pagina
+              pagina,"nombres","ASC"
             )
           }
         >
@@ -83,8 +83,8 @@ function Pagination({
       </li>
       <li className="nav-link">
         <Button
-          className="nav-link btn-link aa"
-          onClick={() => makeHttpRequestWithPage(paginas, pagina)}
+          className="btn-linki"
+          onClick={() => makeHttpRequestWithPage(paginas, pagina,"nombres","ASC")}
         >
           <FontAwesomeIcon icon={faAngleDoubleRight} />
         </Button>

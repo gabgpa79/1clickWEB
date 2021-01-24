@@ -19,6 +19,8 @@ import Datos from "../../pages/datos/datos.jsx";
 import Paquetes from "../../pages/paquetes/paquetes.jsx";
 import Categorias from "../../pages/categorias/categorias.jsx";
 
+import Perfil from "../../pages/perfil/perfil.jsx"
+import Nota from "../../pages/nota/nota.jsx"
 import { Spinner } from "react-redux-spinner";
 
 import logo from "../../assets/img/logo.png";
@@ -83,6 +85,8 @@ class Admin extends React.Component {
         return Clientes;
       case "Datos":
         return Datos;      
+      case "Perfil":
+        return Perfil;  
       default:
         return null;
     }
@@ -163,6 +167,7 @@ class Admin extends React.Component {
               <Route path="/admin/cliente/:clienteId" component={Cliente} />
               <Route path="/admin/paquetes" component={Paquetes} />
               <Route path="/admin/categorias" component={Categorias} />
+              <Route path="/admin/nota/:clienteId" component={Nota} />
               <Route component={Error} />
             </Switch>
           </div>

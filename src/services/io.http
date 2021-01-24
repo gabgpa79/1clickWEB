@@ -1,0 +1,11 @@
+
+POST http://192.168.0.100:4000/api/usuarios/panico
+Content-Type: application/json
+
+{
+    "nombre" : "Darwin Hijo",    
+    "refemail" : "darwin.chichi17@gmail.com",
+    "refnombre": "Darwin PAPA",
+    "latitude":"-17.797699", 
+    "longitude":"-63.202815"
+}

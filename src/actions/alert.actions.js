@@ -41,10 +41,11 @@ function info(message) {
     };
 }
 
-function error(message) {
+function error(message) {  
+  const msg = message.toString() === 'TypeError: NetworkError when attempting to fetch resource.' ? 'Sin conexion a BD' : message
     return { 
       type: NOTIFICATION_TYPE_ERROR,
-      message: message,      
+      message: msg,      
       duration: 1500,
       canDismiss: true
     };

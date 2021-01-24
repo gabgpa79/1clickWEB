@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { crudActions } from "../../../actions";
-import { apiErp } from "../../../helpers";
+import { crudActions } from "../../actions";
+import { apiErp } from "../../helpers";
 
 import { Input, Row, Col, Label, FormGroup, Button, ButtonGroup } from "reactstrap";
 

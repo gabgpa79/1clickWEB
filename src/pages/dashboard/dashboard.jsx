@@ -4,6 +4,10 @@ import {
   Col
 } from "reactstrap";
 
+import { connect } from "react-redux";
+
+
+
 import Bars from './components/Bars'
 import Bar from './components/Bar'
 import Pie from './components/Pie'
@@ -21,8 +25,9 @@ class Dashboard extends React.Component {
     });
   };
   render() {
-    return (      
-        <div className="content">
+    const { users } = this.props
+    const conten = users.user.rolId === 2 ?
+        <>
           <Row>
             <Col xs="12" md="12" className="iok">              
               <Bars/>            
@@ -36,9 +41,26 @@ class Dashboard extends React.Component {
               <Pie/>            
             </Col>
           </Row>               
+        </>:
+        <>
+        <h5>Bienvenido!!</h5>
+        <h6>{ users.user.nombres }</h6>
+          <img
+            alt="..."
+            src={require("../../assets/img/dashboard.jpg")}
+            className="dashboardi"
+          />
+        </>
+    return (      
+        <div className="content">
+          { conten }
         </div>
     );
   }
 }
 
-export default Dashboard;
+const mapStateToProps = (state) => ({  
+  users: state.users
+});
+
+export default connect(mapStateToProps)(Dashboard);

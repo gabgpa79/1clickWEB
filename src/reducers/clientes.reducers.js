@@ -4,7 +4,7 @@ const initialState = {
   paginas: 0,
   total: 0,
   item: {
-    id: "",
+    id: 0,
     nombres: "",
     direccion: "",
     telefono: "",
@@ -36,21 +36,10 @@ const initialState = {
       id: 0,
       nombre: "",
     },
-  },
-  sucursales: [], 
-  sucursal:{
-    id: "",
-    nombre: "",
-    direccion:"",
-    telefono:"",
-    celular:"",
-    longitude:"",
-    latitude:"",
-    tipo:"",
-    icon:""
-  },
+  },  
   modalView: false,
   vusername: false,
+  venlace: false
 };
 
 export function clientes(state = initialState, action) {
@@ -62,18 +51,7 @@ export function clientes(state = initialState, action) {
         pagina: action.response.pagina,
         paginas: action.response.paginas,
         total: action.response.total,
-      };
-    case "SUCURSAL_DATA":
-        return {
-          ...state,
-          sucursales: action.response,
-          sucursal: initialState.sucursal
-        }; 
-    case "SUCURSAL_ITEM":
-          return {
-            ...state,            
-            sucursal: action.response
-          };      
+      };    
     case "CLIENTE_UPDATE":
       return {
         ...state,
@@ -87,30 +65,32 @@ export function clientes(state = initialState, action) {
     case "CLIENTE_VERIFICAR_USERNAME":
       return {
         ...state,
-        vusername: action.vusername,
+        vusername: action.response,
       };
+    case "CLIENTE_VERIFICAR_ENLACE":
+        return {
+          ...state,
+          venlace: action.response,
+        };  
     case "CLIENTE_CHANGE":
       return {
         ...state,
         item: { ...state.item, [action.props]: action.value },
-      };
-    case "SUCURSAL_CHANGE":
-        return {
-          ...state,
-          sucursal: { ...state.sucursal, [action.props]: action.value },
-        };  
+      };  
     case "CLIENTE_CREATE":
       return {
         ...state,
         item: initialState.item,
       };
+    case "CLIENTE_REGISTRO":
+        return {
+          ...state,
+          item: action.item
+        };  
     case "CLIENTE_ITEM_VIEW":
       return {
         ...state,
-        item: action.response.cliente,
-        contrato: action.response.contrato,
-        nota: action.response.nota,
-        plan: action.response.plan,
+        item: action.response,        
         modalView: action.state,
       };
     case "CLIENTE_ITEM_VIEWS":
@@ -125,8 +105,7 @@ export function clientes(state = initialState, action) {
     case "CLIENTE_ITEM":
       return {
         ...state,
-        item: action.response.cliente,
-        sucursales: action.response.sucursales
+        item: action.response
 
       };
     case "CLIENTE_RESET":

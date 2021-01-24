@@ -6,7 +6,7 @@ import { apiErp } from "../../../helpers";
 
 import { Input, Row, Col, Label, FormGroup, Button, ButtonGroup } from "reactstrap";
 
-class Portada extends React.Component {
+class Imagenes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,7 +26,7 @@ class Portada extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append("file", this.state.file);
-    this.props.uploads(
+    this.props.upload(
       "CLIENTE_REGISTO",
       "files",
       formData,
@@ -57,27 +57,32 @@ class Portada extends React.Component {
     
     let $imagePreview = null;
     if (imagePreviewUrl) {
-      $imagePreview = <img alt="preview" src={imagePreviewUrl} />;
+      $imagePreview = <img alt="preview" className="img-responsive" src={imagePreviewUrl} />;
     } else {
       $imagePreview = (
         <img
           alt="cliente"
-          className="img-portada"
-          src={apiErp + "/static/images/clientes/portada/lg/" + item.portada}
+          className="img-perfil"
+          src={apiErp + "/static/images/clientes/lg/" + item.filename}
         />
       );
     }
 
     return (
-      <>      
-      <Row className="imgSave">
+      <>
+  <Row className="perfilPreview">
+        <Col>
+        {$imagePreview}
+        </Col>
+      </Row>
+        <Row className="perfilSave">
         <Col>
         <form onSubmit={(e) => this._handleSubmit(e)}>
             {item.id && (
               <>
                 <Row>
-                  <Col md="6">
-                    <FormGroup className="frmi">
+                  <Col >
+                    <FormGroup className="frmp">
                       <Input
                         type="file"
                         id="file"
@@ -86,8 +91,10 @@ class Portada extends React.Component {
                       />
                       <Label for="file">seleccionar</Label>
                     </FormGroup>
-                  </Col>
-                  <Col md="6">
+                  </Col>                  
+                </Row>
+                <Row>                  
+                  <Col >
                   <ButtonGroup>
                       <Button
                         className={
@@ -108,11 +115,7 @@ class Portada extends React.Component {
           </form>
         </Col>
       </Row>  
-      <Row className="imgPreview">
-        <Col>
-        {$imagePreview}
-        </Col>
-      </Row>
+      
       </>
     );
   }
@@ -128,8 +131,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-  clientes: state.clientes,
-  users: state.users,
+  clientes: state.clientes
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Portada);
+export default connect(mapStateToProps, mapDispatchToProps)(Imagenes);

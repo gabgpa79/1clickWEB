@@ -20,7 +20,7 @@ class TablePaquetes extends React.Component {
   }
 
   makeHttpRequestWithPage = (pageNumber, num) => {
-    this.props.getData("PAQUETE_DATA", "paquetes", pageNumber, num);
+    this.props.getData("PAQUETE_DATA", "paquetes", pageNumber, num,"nombre","ASC");
   };
 
   handlePagina = (prop) => (event) => {

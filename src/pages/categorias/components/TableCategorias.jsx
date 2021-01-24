@@ -20,7 +20,7 @@ class TableCategorias extends React.Component {
   }
 
   makeHttpRequestWithPage = (pageNumber, num) => {
-    this.props.getData("CATEGORIA_DATA", "categorias", pageNumber, num);
+    this.props.getData("CATEGORIA_DATA", "categorias", pageNumber, num,"nombre","ASC");
   };
 
   handlePagina = (prop) => (event) => {

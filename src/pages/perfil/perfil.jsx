@@ -4,17 +4,17 @@ import { bindActionCreators } from "redux";
 import { crudActions } from "../../actions";
 
 import { TabContent, TabPane, Nav, NavItem, NavLink } from "reactstrap";
-import { Link } from "react-router-dom";
-import FormCliente from './components/FormCliente'
-import Imagenes from './components/Imagenes'
+import FormCliente from '../clientes/components/FormCliente'
+import Imagenes from '../clientes/components/Imagenes'
 import Sucursales from '../sucursales/sucursales'
 import Publicidad from '../publicidad/publicidad'
 import Horarios from '../horarios/horarios'
-import Seguridad from './components/Seguridad'
+import Seguridad from '../clientes/components/Seguridad'
+
 
 import classnames from 'classnames';
 
-class cliente extends React.Component {
+class perfil extends React.Component {
   constructor(props) {
   super(props);
     this.state = {
@@ -28,17 +28,13 @@ class cliente extends React.Component {
   };  
 
     componentDidMount() {
-        const {
-          match: { params },
-        } = this.props;
-        if (params.clienteId > 0) {
-          this.props.getItem("CLIENTE_ITEM", "clientes", params.clienteId);
+        const { id } = this.props.users.user;
+          this.props.getItem("CLIENTE_ITEM", "clientes", id);
           this.setState({
-            clienteId: params.clienteId,
+            clienteId: id,
             file: "",
             imagePreviewUrl: "",
-          })
-        }
+          })        
     }    
 
     toggle = tab =>{
@@ -117,15 +113,7 @@ class cliente extends React.Component {
     return (
         <div className="content">
         <div className="main-contenido">        
-        <Nav tabs>
-        <NavItem>
-          <NavLink
-            className={classnames({ active: activeTab === '1' })}       >
-            <Link to={`/admin/clientes`}>
-            Lista de Clientes
-            </Link>
-          </NavLink>
-        </NavItem>
+        <Nav tabs>        
         <NavItem>
           <NavLink
             className={classnames({ active: activeTab === '2' })}
@@ -240,4 +228,4 @@ const mapStateToProps = (state) => ({
   users: state.users
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(cliente);
+export default connect(mapStateToProps, mapDispatchToProps)(perfil);

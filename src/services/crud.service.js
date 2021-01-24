@@ -14,6 +14,11 @@ export const crudService = {
   search,
   buscar,
   getConsulta,
+  vusername,
+  registrar,
+  venlace,
+  pagar,
+  getHorario,
   delete: _delete,
 };
 
@@ -28,13 +33,46 @@ function buscar(payload, page, numPage, parametro) {
   ).then(handleResponse);
 }
 
-function getData(payload, page, numPage) {
+function getHorario(cliente, tipo) {
   const requestOptions = {
     method: "GET",
     headers: authHeader(),
   };
   return fetch(
-    `${apiErp}/${payload}/lista/${page}/${numPage}`,
+    `${apiErp}/horarios/cliente/${cliente}/${tipo}`,
+    requestOptions
+  ).then(handleResponse);
+}
+
+function venlace(payload, parametro) {
+  const requestOptions = {
+    method: "GET",
+    headers: authHeader(),
+  };
+  return fetch(
+    `${apiErp}/${payload}/venlace/${parametro}`,
+    requestOptions
+  ).then(handleResponse);
+}
+
+function vusername(payload, parametro) {
+  const requestOptions = {
+    method: "GET",
+    headers: authHeader(),
+  };
+  return fetch(
+    `${apiErp}/${payload}/vusername/${parametro}`,
+    requestOptions
+  ).then(handleResponse);
+}
+
+function getData(payload, page, numPage, prop, orden) {
+  const requestOptions = {
+    method: "GET",
+    headers: authHeader(),
+  };
+  return fetch(
+    `${apiErp}/${payload}/lista/${page}/${numPage}/${prop}/${orden}`,
     requestOptions
   ).then(handleResponse);
 }
@@ -69,6 +107,16 @@ function create(payload, dato) {
   return fetch(`${apiErp}/${payload}`, requestOptions).then(handleResponse);
 }
 
+function registrar(payload, dato) {
+  const requestOptions = {
+    method: "POST",
+    headers: { ...authHeader(), "Content-Type": "application/json" },
+    body: JSON.stringify(dato),
+  };
+
+  return fetch(`${apiErp}/${payload}/registrar`, requestOptions).then(handleResponse);
+}
+
 function getItemFull(payload, id) {
   const requestOptions = {
     method: "GET",
@@ -78,6 +126,17 @@ function getItemFull(payload, id) {
     handleResponse
   );
 }
+function search(payload, dato) {
+  const requestOptions = {
+    method: "GET",
+    headers: authHeader(),
+  };
+
+  return fetch(`${apiErp}/${payload}/search/${dato}`, requestOptions).then(
+    handleResponse
+  );
+}
+
 function getItem(payload, id) {
   const requestOptions = {
     method: "GET",
@@ -147,17 +206,7 @@ function uploads(payload, dato, datoId) {
   ).then(handleResponse);
 }
 
-function search(payload, dato) {
-  const requestOptions = {
-    method: "POST",
-    headers: { ...authHeader(), "Content-Type": "application/json" },
-    body: JSON.stringify(dato),
-  };
 
-  return fetch(`${apiErp}/${payload}/search`, requestOptions).then(
-    handleResponse
-  );
-}
 
 function _delete(payload, id) {
   const requestOptions = {
@@ -166,6 +215,16 @@ function _delete(payload, id) {
   };
 
   return fetch(`${apiErp}/${payload}/${id}`, requestOptions).then(
+    handleResponse
+  );
+}
+
+function pagar(payload,id) {
+  const requestOptions = {
+    method: "GET",
+    headers: authHeader(),
+  };
+  return fetch(`${apiErp}/contratos/pagar/${id}`, requestOptions).then(
     handleResponse
   );
 }

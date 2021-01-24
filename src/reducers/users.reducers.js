@@ -1,28 +1,12 @@
 let user  = JSON.parse(localStorage.getItem('user'));
 let token = JSON.parse(localStorage.getItem('token'));
 let items = JSON.parse(localStorage.getItem('items'));
-let data = [];
+
 let userId = 0;
-let name = '';
-let proceso = '';
 let message = '';
 let vusername = false;
-let patrocinador = {
-  'id':'',
-  'nombres':'',
-  'estado':'',
-  'email':''
-};
-let usuario = {
-  'id':'',
-  'nombres':'',
-  'estado':'',
-  'email':'',
-  'password':'',
-  'foto':''
-}
-const initialState = user ? { modalRegister:false, total:0, pagina:0, paginas:0, loggedIn:true, user, token, items, data, userId, name, proceso, patrocinador, message, vusername, usuario } 
-                          : {data, userId, vusername, name, proceso, patrocinador, usuario };
+const initialState = user ? { modalRegister:false, total:0, pagina:0, paginas:0, loggedIn:true, user, token, items, userId, message, vusername } 
+                          : { userId, vusername };
 
 export function users(state = initialState, action) {
   switch (action.type) {         
